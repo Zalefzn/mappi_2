@@ -40,7 +40,7 @@
 
         /* override background putih dari Bootstrap */
         .bg-white {
-          background-color: #f4f5fa !important;
+          background-color: #ffff !important;
         }
 
         /* override section yang pakai bg-body-primary-emphasis */
@@ -114,138 +114,106 @@
     </head>
 
     <body>
-      <!-- Topbar (Fixed) -->
-      <div class="topbar fixed-top shadow-sm">
-        <div class="bg-white py-2 py-md-3">
-          <div class="container d-flex align-items-center">
-            <!-- Left: Search -->
-            <div class="me-auto w-100 w-md-auto">
-              <!-- Mobile search -->
-              <div
-                class="d-flex d-md-none justify-content-between align-items-center w-100"
-              >
-                <i class="bi bi-search search-icon fs-4"></i>
-                <a href="./login.html">
-                  <button class="btn px-3 rounded-pill btn-member">
-                    Member
-                  </button>
-                </a>
-              </div>
-
-              <!-- Desktop search -->
-              <div class="position-relative d-none d-md-block">
-                <input
-                  type="text"
-                  class="form-control py-3 ps-3 rounded-pill"
-                  placeholder="Ketik untuk mencari"
-                />
-                <i class="bi bi-search search-icon"></i>
-              </div>
+      <!-- TOPBAR FIXED -->
+      <div class="fixed-top bg-white shadow-sm">
+        <div class="container py-2 py-md-3 d-flex align-items-center">
+          <!-- Search (mobile & desktop) -->
+          <div class="me-auto" style="max-width: 450px; width: 100%">
+            <div class="position-relative w-100">
+              <i
+                class="bi bi-search"
+                style="
+                  position: absolute;
+                  right: 110px;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  font-size: 18px;
+                  color: #6c757d;
+                "
+              ></i>
+              <input
+                type="text"
+                class="form-control ps-4 pe-5 py-2 rounded-pill bg-light border-0"
+                placeholder="Ketik untuk mencari"
+                style="height: 46px"
+              />
             </div>
+          </div>
 
-            <!-- Right: Desktop buttons -->
-            <div
-              class="d-none d-md-flex flex-row align-items-center ms-auto gap-4"
+          <!-- Right Buttons (Desktop Only) -->
+          <div class="d-none d-md-flex align-items-center ms-auto gap-4">
+            <a href="./login.html" class="text-decoration-none">
+              <button class="btn btn-primary px-4 rounded-pill">Member</button>
+            </a>
+
+            <a
+              href="https://wa.me/62811219810"
+              class="text-decoration-none text-reset d-flex align-items-center gap-2"
+              target="_blank"
             >
-              <a class="text-decoration-none" href="./login.html">
-                <button class="btn px-4 rounded-pill btn-member">Member</button>
-              </a>
-
-              <a
-                class="text-decoration-none text-reset whatsapp d-flex align-items-center gap-2"
-                href="https://wa.me/62811219810"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i class="bi bi-whatsapp whatsapp-icon"></i>
-                <span class="fw-bold">MAPPI Official</span>
-              </a>
-            </div>
+              <i class="bi bi-whatsapp fs-4 text-success"></i>
+              <span class="fw-bold">MAPPI Official</span>
+            </a>
           </div>
         </div>
       </div>
 
-      <!-- Main Navigation -->
+      <!-- NAVBAR -->
       <nav
         class="navbar navbar-expand-xl"
-        style="background-color: #f4f5fa; margin-top: 90px"
+        style="background-color: #ffff; margin-top: 90px"
       >
         <div class="container">
-          <a
-            class="navbar-brand"
-            href="javascript:void(0);"
-            style="color: #04136a"
-          >
+          <!-- Logo -->
+          <a class="navbar-brand" href="#">
             <img
               src="/assets/images/logo_with_text.png"
+              width="218"
               alt="logo"
-              width="218px"
             />
           </a>
 
+          <!-- Toggler -->
           <button
-            class="navbar-toggler p-0 border-0"
+            class="navbar-toggler border-0"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
 
+          <!-- Menu -->
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
                 <a class="nav-link" href="./index.html">Beranda</a>
               </li>
 
+              <!-- Dropdown -->
               <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
-                  href="javascript:void(0);"
-                  role="button"
+                  href="#"
                   data-bs-toggle="dropdown"
-                  aria-expanded="false"
+                  >Tentang MAPPI</a
                 >
-                  Tentang MAPPI
-                </a>
                 <ul class="dropdown-menu">
-                  <li>
-                    <a class="dropdown-item" href="javascript:void(0);"
-                      >Action</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="javascript:void(0);"
-                      >Another action</a
-                    >
-                  </li>
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
                 </ul>
               </li>
 
               <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
-                  href="javascript:void(0);"
-                  role="button"
+                  href="#"
                   data-bs-toggle="dropdown"
-                  aria-expanded="false"
+                  >Peraturan & Standard</a
                 >
-                  Peraturan & Standard
-                </a>
                 <ul class="dropdown-menu">
-                  <li>
-                    <a class="dropdown-item" href="javascript:void(0);"
-                      >Action</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="javascript:void(0);"
-                      >Another action</a
-                    >
-                  </li>
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
                 </ul>
               </li>
 
@@ -253,103 +221,64 @@
                 <a
                   class="nav-link dropdown-toggle"
                   href="./blog.html"
-                  role="button"
                   data-bs-toggle="dropdown"
-                  aria-expanded="false"
+                  >Berita & Pustaka</a
                 >
-                  Berita & Pustaka
-                </a>
                 <ul class="dropdown-menu">
                   <li>
                     <a class="dropdown-item" href="./blog.html">Action</a>
                   </li>
-                  <li>
-                    <a class="dropdown-item" href="javascript:void(0);"
-                      >Another action</a
-                    >
-                  </li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
                 </ul>
               </li>
 
               <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
-                  href="javascript:void(0);"
-                  role="button"
+                  href="#"
                   data-bs-toggle="dropdown"
-                  aria-expanded="false"
+                  >Pendidikan</a
                 >
-                  Pendidikan
-                </a>
                 <ul class="dropdown-menu">
-                  <li>
-                    <a class="dropdown-item" href="javascript:void(0);"
-                      >Action</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="javascript:void(0);"
-                      >Another action</a
-                    >
-                  </li>
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
                 </ul>
               </li>
 
               <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
-                  href="javascript:void(0);"
-                  role="button"
+                  href="#"
                   data-bs-toggle="dropdown"
-                  aria-expanded="false"
+                  >Sertifikasi</a
                 >
-                  Sertifikasi
-                </a>
                 <ul class="dropdown-menu">
-                  <li>
-                    <a class="dropdown-item" href="javascript:void(0);"
-                      >Action</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="javascript:void(0);"
-                      >Another action</a
-                    >
-                  </li>
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
                 </ul>
               </li>
 
               <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
-                  href="javascript:void(0);"
-                  role="button"
+                  href="#"
                   data-bs-toggle="dropdown"
-                  aria-expanded="false"
+                  >Hubungi Kami</a
                 >
-                  Hubungi Kami
-                </a>
                 <ul class="dropdown-menu">
-                  <li>
-                    <a class="dropdown-item" href="javascript:void(0);"
-                      >Action</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="javascript:void(0);"
-                      >Another action</a
-                    >
-                  </li>
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
                 </ul>
               </li>
 
-              <!-- Mobile Login Link -->
+              <!-- Mobile Login Button -->
               <li class="nav-item d-xl-none mt-2">
                 <a
-                  class="nav-link btn btn-member text-center w-100"
                   href="./login.html"
-                  >Login / Member</a
+                  class="nav-link btn btn-primary rounded-pill text-center w-100"
                 >
+                  Login / Member
+                </a>
               </li>
             </ul>
           </div>

@@ -7,6 +7,8 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="/assets/css/index.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <!-- CSS Bootstrap -->
     <link
@@ -31,193 +33,161 @@
     />
 
     <style>
-      .text-primary-mappi {
-        color: #010b69;
-      }
-      .section-title-wrapper {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        width: 100%;
+      .border-bottom-blue {
+        border-bottom: 6px solid #0041a2 !important;
       }
 
-      .section-title-wrapper h3 {
-        margin: 0;
-        white-space: nowrap;
-        color: #ffffff;
+      .card-gradient {
+        background: linear-gradient(180deg, #dce6f7 0%, #f1f4fa 100%);
       }
 
-      .section-title-wrapper {
-        display: flex;
-        align-items: center;
-        width: 100%;
-        gap: 1rem;
+      .gradient-text {
+        background: linear-gradient(90deg, #003ea8 0%, #0066ff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
 
-      /* Garis fleksibel di tengah */
-      .section-divider {
-        flex-grow: 1;
-        height: 1px;
-        background: rgba(255, 255, 255, 0.4);
-      }
-
-      .schedule-section {
-        background: #f6f8fc;
-      }
-      .schedule-tabs .nav-link {
-        color: #6b7785;
-        padding: 8px 12px;
-      }
-      .schedule-tabs .nav-link.active {
-        color: #0a2a84;
-        font-weight: 700;
-        border-bottom: 2px solid #0a2a84;
-      }
-      .schedule-list .list-group-item {
-        background: transparent;
-      }
-      .tag {
-        display: inline-block;
-        padding: 6px 10px;
-        border-radius: 999px;
-        background: #e8f0ff;
-        color: #0a2a84;
-        font-weight: 600;
-      }
-      .tag.primary {
-        background: #0a2a84;
+      #berita {
+        position: relative;
+        border-radius: 0px;
+        background: linear-gradient(
+            rgba(0, 123, 255, 0.5),
+            rgba(0, 123, 255, 0.5)
+          ),
+          url("./assets/images/bg-berita.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
         color: #fff;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        border-radius: 1rem;
+      }
+
+      #services {
+        position: relative;
+        padding: 4rem 0;
+        background: linear-gradient(
+            rgba(255, 255, 255, 0.5),
+            /* overlay biru transparan */ rgba(255, 255, 255, 0.5)
+          ),
+          url("./assets/images/bg-services.png"); /* ganti path gambar */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .split-card {
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.1
+        ); /* semi-transparan agar kontras */
       }
     </style>
   </head>
 
   <body>
-    <!-- Topbar (Fixed) -->
-    <div class="topbar fixed-top shadow-sm">
-      <div class="bg-white py-2 py-md-3">
-        <div class="container d-flex align-items-center">
-          <!-- Left: Search -->
-          <div class="me-auto w-100 w-md-auto">
-            <!-- Mobile search -->
-            <div
-              class="d-flex d-md-none justify-content-between align-items-center w-100"
-            >
-              <i class="bi bi-search search-icon fs-4"></i>
-              <a href="./login.html">
-                <button class="btn px-3 rounded-pill btn-member">Member</button>
-              </a>
-            </div>
-
-            <!-- Desktop search -->
-            <div class="position-relative d-none d-md-block">
-              <input
-                type="text"
-                class="form-control py-3 ps-3 rounded-pill"
-                placeholder="Ketik untuk mencari"
-              />
-              <i class="bi bi-search search-icon"></i>
-            </div>
+    <!-- TOPBAR FIXED -->
+    <div class="fixed-top bg-white shadow-sm">
+      <div class="container py-2 py-md-3 d-flex align-items-center">
+        <!-- Search (mobile & desktop) -->
+        <div class="me-auto" style="max-width: 450px; width: 100%">
+          <div class="position-relative w-100">
+            <i
+              class="bi bi-search"
+              style="
+                position: absolute;
+                right: 110px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 18px;
+                color: #6c757d;
+              "
+            ></i>
+            <input
+              type="text"
+              class="form-control ps-4 pe-5 py-2 rounded-pill bg-light border-0"
+              placeholder="Ketik untuk mencari"
+              style="height: 46px"
+            />
           </div>
+        </div>
 
-          <!-- Right: Desktop buttons -->
-          <div
-            class="d-none d-md-flex flex-row align-items-center ms-auto gap-4"
+        <!-- Right Buttons (Desktop Only) -->
+        <div class="d-none d-md-flex align-items-center ms-auto gap-4">
+          <a href="./login.html" class="text-decoration-none">
+            <button class="btn btn-primary px-4 rounded-pill">Member</button>
+          </a>
+
+          <a
+            href="https://wa.me/62811219810"
+            class="text-decoration-none text-reset d-flex align-items-center gap-2"
+            target="_blank"
           >
-            <a class="text-decoration-none" href="./login.html">
-              <button class="btn px-4 rounded-pill btn-member">Member</button>
-            </a>
-
-            <a
-              class="text-decoration-none text-reset whatsapp d-flex align-items-center gap-2"
-              href="https://wa.me/62811219810"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="bi bi-whatsapp whatsapp-icon"></i>
-              <span class="fw-bold">MAPPI Official</span>
-            </a>
-          </div>
+            <i class="bi bi-whatsapp fs-4 text-success"></i>
+            <span class="fw-bold">MAPPI Official</span>
+          </a>
         </div>
       </div>
     </div>
 
-    <!-- Main Navigation -->
+    <!-- NAVBAR -->
     <nav
       class="navbar navbar-expand-xl"
-      style="background-color: #f4f5fa; margin-top: 90px"
+      style="background-color: #ffff; margin-top: 90px"
     >
       <div class="container">
-        <a
-          class="navbar-brand"
-          href="javascript:void(0);"
-          style="color: #04136a"
-        >
-          <img
-            src="/assets/images/logo_with_text.png"
-            alt="logo"
-            width="218px"
-          />
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">
+          <img src="/assets/images/logo_with_text.png" width="218" alt="logo" />
         </a>
 
+        <!-- Toggler -->
         <button
-          class="navbar-toggler p-0 border-0"
+          class="navbar-toggler border-0"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
 
+        <!-- Menu -->
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="javascript:void(0);">Beranda</a>
+              <a class="nav-link" href="#">Beranda</a>
             </li>
 
+            <!-- Dropdown -->
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
-                href="javascript:void(0);"
-                role="button"
+                href="#"
                 data-bs-toggle="dropdown"
-                aria-expanded="false"
+                >Tentang MAPPI</a
               >
-                Tentang MAPPI
-              </a>
               <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="javascript:void(0);">Action</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="javascript:void(0);"
-                    >Another action</a
-                  >
-                </li>
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
               </ul>
             </li>
 
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
-                href="javascript:void(0);"
-                role="button"
+                href="#"
                 data-bs-toggle="dropdown"
-                aria-expanded="false"
+                >Peraturan & Standard</a
               >
-                Peraturan & Standard
-              </a>
               <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="javascript:void(0);">Action</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="javascript:void(0);"
-                    >Another action</a
-                  >
-                </li>
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
               </ul>
             </li>
 
@@ -225,95 +195,62 @@
               <a
                 class="nav-link dropdown-toggle"
                 href="./blog.html"
-                role="button"
                 data-bs-toggle="dropdown"
-                aria-expanded="false"
+                >Berita & Pustaka</a
               >
-                Berita & Pustaka
-              </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="./blog.html">Action</a></li>
-                <li>
-                  <a class="dropdown-item" href="javascript:void(0);"
-                    >Another action</a
-                  >
-                </li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
               </ul>
             </li>
 
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
-                href="javascript:void(0);"
-                role="button"
+                href="#"
                 data-bs-toggle="dropdown"
-                aria-expanded="false"
+                >Pendidikan</a
               >
-                Pendidikan
-              </a>
               <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="javascript:void(0);">Action</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="javascript:void(0);"
-                    >Another action</a
-                  >
-                </li>
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
               </ul>
             </li>
 
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
-                href="javascript:void(0);"
-                role="button"
+                href="#"
                 data-bs-toggle="dropdown"
-                aria-expanded="false"
+                >Sertifikasi</a
               >
-                Sertifikasi
-              </a>
               <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="javascript:void(0);">Action</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="javascript:void(0);"
-                    >Another action</a
-                  >
-                </li>
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
               </ul>
             </li>
 
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
-                href="javascript:void(0);"
-                role="button"
+                href="#"
                 data-bs-toggle="dropdown"
-                aria-expanded="false"
+                >Hubungi Kami</a
               >
-                Hubungi Kami
-              </a>
               <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="javascript:void(0);">Action</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="javascript:void(0);"
-                    >Another action</a
-                  >
-                </li>
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
               </ul>
             </li>
 
-            <!-- Mobile Login Link -->
+            <!-- Mobile Login Button -->
             <li class="nav-item d-xl-none mt-2">
               <a
-                class="nav-link btn btn-member text-center w-100"
                 href="./login.html"
-                >Login / Member</a
+                class="nav-link btn btn-primary rounded-pill text-center w-100"
               >
+                Login / Member
+              </a>
             </li>
           </ul>
         </div>
@@ -323,8 +260,8 @@
     <!-- Section -->
     <section id="jumbroton">
       <div class="container pt-3 pb-5">
-        <!-- Jumbroton -->
-        <div class="card border-0 rounded-0">
+        <!-- Jumbotron -->
+        <div class="card border-0 rounded-0" data-aos="fade-up" duration="200">
           <img
             src="/assets/images/bg-header.png"
             class="card-img rounded-0"
@@ -336,22 +273,12 @@
             <div
               class="d-flex flex-column flex-md-row justify-content-center align-items-md-center gap-md-4"
             >
-              <center>
-                <img
-                  src="/assets/images/logo_polos.png"
-                  alt="logo"
-                  height="162px"
-                  width="132px"
-                />
-              </center>
-              <div class="mt-2 text-center text-md-start mt-md-3">
-                <h2 style="font-weight: 900; color: #04136a" class="mb-1">
-                  MASYARAKAT PROFESI<br />PENILAI INDONESIA
-                </h2>
-                <p class="fw-semibold" style="color: #04136a; font-size: 18px">
-                  Indonesian Society of Appraisers
-                </p>
-              </div>
+              <img
+                src="/assets/images/logo-hero.png"
+                alt="logo"
+                height="auto"
+                width="auto"
+              />
             </div>
           </div>
         </div>
@@ -360,139 +287,106 @@
         <div
           class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-3 list-card"
         >
-          <div class="col">
-            <div
-              class="card border-0 h-100"
-              style="
-                border-bottom: 6px solid #0041a2;
-                background-color: #ebf0f8;
-              "
-            >
+          <!-- Card 1 -->
+          <div class="col" data-aos="fade-up" duration="300">
+            <div class="card border-0 border-bottom-blue h-100 card-gradient">
               <div
                 class="card-body d-flex flex-column justify-content-center align-items-center text-center py-4"
               >
-                <img
-                  src="/assets/images/logo_1.png"
-                  alt="icon"
-                  class="mb-3"
-                  style="height: 40px; width: 40px"
-                />
-                <h6
-                  class="card-title mb-0"
-                  style="color: #0041a2; font-weight: 800"
-                >
+                <img src="/assets/images/logo_1.png" alt="icon" class="mb-3" />
+                <h6 class="card-title mb-0 fw-bold gradient-text">
                   Berita MAPPI
                 </h6>
               </div>
             </div>
           </div>
 
-          <div class="col">
-            <div
-              class="card border-0 h-100"
-              style="
-                border-bottom: 6px solid #0041a2;
-                background-color: #ebf0f8;
-              "
-            >
+          <!-- Card 2 -->
+          <div class="col" data-aos="fade-up" duration="350">
+            <div class="card border-0 border-bottom-blue h-100 card-gradient">
               <div
                 class="card-body d-flex flex-column justify-content-center align-items-center text-center py-4"
               >
-                <img
-                  src="/assets/images/logo_2.png"
-                  alt="icon"
-                  class="mb-3"
-                  style="height: 40px; width: 40px"
-                />
-                <h6
-                  class="card-title mb-0"
-                  style="color: #0041a2; font-weight: 800"
-                >
+                <img src="/assets/images/logo_2.png" alt="icon" class="mb-3" />
+                <h6 class="card-title mb-0 fw-bold gradient-text">
                   Riset & Pengembangan
                 </h6>
               </div>
             </div>
           </div>
 
-          <div class="col">
-            <div
-              class="card border-0 h-100"
-              style="
-                border-bottom: 6px solid #0041a2;
-                background-color: #ebf0f8;
-              "
-            >
+          <!-- Card 3 -->
+          <div class="col" data-aos="fade-up" duration="400">
+            <div class="card border-0 border-bottom-blue h-100 card-gradient">
               <div
                 class="card-body d-flex flex-column justify-content-center align-items-center text-center py-4"
               >
-                <img
-                  src="/assets/images/logo_3.png"
-                  alt="icon"
-                  class="mb-3"
-                  style="height: 40px; width: 40px"
-                />
-                <h6
-                  class="card-title mb-0"
-                  style="color: #0041a2; font-weight: 800"
-                >
+                <img src="/assets/images/logo_3.png" alt="icon" class="mb-3" />
+                <h6 class="card-title mb-0 fw-bold gradient-text">
                   Jadwal Pendidikan
                 </h6>
               </div>
             </div>
           </div>
 
-          <div class="col">
-            <div
-              class="card border-0 h-100"
-              style="
-                border-bottom: 6px solid #0041a2;
-                background-color: #ebf0f8;
-              "
-            >
+          <!-- Card 4 -->
+          <div class="col" data-aos="fade-up" duration="450">
+            <div class="card border-0 border-bottom-blue h-100 card-gradient">
               <div
                 class="card-body d-flex flex-column justify-content-center align-items-center text-center py-4"
               >
-                <img
-                  src="/assets/images/logo_4.png"
-                  alt="icon"
-                  class="mb-3"
-                  style="height: 40px; width: 40px"
-                />
-                <h6
-                  class="card-title mb-0"
-                  style="color: #0041a2; font-weight: 800"
-                >
+                <img src="/assets/images/logo_4.png" alt="icon" class="mb-3" />
+                <h6 class="card-title mb-0 fw-bold gradient-text">
                   Pendaftaran Online
                 </h6>
               </div>
             </div>
           </div>
 
-          <div class="col">
-            <div
-              class="card border-0 h-100"
-              style="
-                border-bottom: 6px solid #0041a2;
-                background-color: #ebf0f8;
-              "
-            >
+          <!-- Card 5 -->
+          <div class="col" data-aos="fade-up" duration="500">
+            <div class="card border-0 border-bottom-blue h-100 card-gradient">
               <div
                 class="card-body d-flex flex-column justify-content-center align-items-center text-center py-4"
               >
-                <img
-                  src="/assets/images/logo_5.png"
-                  alt="icon"
-                  class="mb-3"
-                  style="height: 40px; width: 40px"
-                />
-                <h6
-                  class="card-title mb-0"
-                  style="color: #0041a2; font-weight: 800"
-                >
+                <img src="/assets/images/logo_5.png" alt="icon" class="mb-3" />
+                <h6 class="card-title mb-0 fw-bold gradient-text">
                   E-Commerce
                 </h6>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partner Section -->
+    <section class="partner py-5" data-aos="fade-up" duration="550">
+      <div class="container">
+        <div
+          class="d-flex flex-wrap justify-content-between align-items-center gap-4"
+        >
+          <div class="partner-item">
+            <img src="/assets/images/kpspi.png" alt="KPSI" class="img-fluid" />
+          </div>
+          <div class="partner-item">
+            <img src="/assets/images/kppi.png" alt="KPPI" class="img-fluid" />
+          </div>
+          <div class="partner-item">
+            <img src="/assets/images/kusp.png" alt="KUSP" class="img-fluid" />
+          </div>
+          <div class="partner-item">
+            <img src="/assets/images/fppm.png" alt="FPPM" class="img-fluid" />
+          </div>
+          <div class="partner-item">
+            <img src="/assets/images/ikjp.png" alt="IKJPP" class="img-fluid" />
+          </div>
+          <div class="partner-item">
+            <img
+              src="/assets/images/dewan.png"
+              alt="Dewan Penilai"
+              class="img-fluid"
+            />
           </div>
         </div>
       </div>
@@ -581,10 +475,10 @@
         <div
           class="section-title-wrapper mb-5 d-flex align-items-center justify-content-between flex-wrap flex-md-nowrap gap-3"
         >
-          <h3>Berita MAPPI</h3>
+          <h3 data-aos="fade-up" duration="600">Berita MAPPI</h3>
           <div class="section-divider"></div>
           <!-- garis -->
-          <a class="btn btn-outline-light rounded-pill" href="#">
+          <a class="btn btn-outline-light rounded-pill" href="#" data-aos="fade-up" duration="650">
             Berita lainnya
             <i class="bi bi-box-arrow-up-right ms-2"></i>
           </a>
@@ -692,10 +586,52 @@
           </div>
         </div>
 
+        <style>
+          .media-card {
+            background-color: rgba(0, 123, 255, 0.2); /* biru transparan */
+            border-radius: 1rem;
+            padding: 1rem;
+            min-height: 18rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
+
+          .media-track-wrapper {
+            flex-grow: 1;
+            width: 100%;
+            overflow-x: auto;
+          }
+
+          .media-track {
+            display: flex;
+            gap: 2rem;
+          }
+
+          .media-slide img {
+            max-height: 80px;
+            object-fit: contain;
+          }
+
+          .media-prev,
+          .media-next {
+            background-color: rgba(0, 0, 0, 0.3);
+            color: #fff;
+            border: none;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+          }
+        </style>
+
         <!-- Media Partner Card -->
         <div
           class="media-card rounded-4 p-4 d-flex flex-column justify-content-center align-items-center"
-          style="height: 18rem"
+          style="height: 20px"
         >
           <h3 class="text-center mb-5 fw-bold text-primary-mappi">
             Media Partner
@@ -707,19 +643,19 @@
             <div class="media-track-wrapper flex-grow-1">
               <div class="media-track d-flex align-items-center gap-5">
                 <div class="media-slide">
-                  <img src="/img/bloomberg.png" alt="Bloomberg" />
+                  <img src="./img/bloomberg.png" alt="Bloomberg" />
                 </div>
                 <div class="media-slide">
-                  <img src="/img/CBV logo.png" alt="CBV" />
+                  <img src="./img/cbv.png" alt="CBV" />
                 </div>
                 <div class="media-slide">
-                  <img src="/img/cfa.png" alt="CFA" />
+                  <img src="./img/cfa.png" alt="CFA" />
                 </div>
                 <div class="media-slide">
-                  <img src="/img/CBV logo.png" alt="CBV" />
+                  <img src="./img/dbs.png" alt="DBS" />
                 </div>
                 <div class="media-slide">
-                  <img src="/img/dbs.png" alt="DBS" />
+                  <img src="./img/part.png" alt="PART" />
                 </div>
               </div>
             </div>
@@ -730,6 +666,7 @@
         </div>
       </div>
     </section>
+
     <!-- Split Card: Riset & Pengembangan | Pendaftaran Online -->
     <section id="services" class="py-5">
       <div class="container">
@@ -926,7 +863,7 @@
           Info lainnya
         </h2>
 
-        <div class="info-cards-wrapper py-4 rounded-4">
+        <div class="py-4 rounded-4">
           <div class="row g-4">
             <div class="col-6 col-md-3">
               <div class="info-card rounded-3 overflow-hidden">
@@ -985,7 +922,7 @@
           Link Terkait
         </h2>
         <div
-          class="d-flex flex-wrap justify-content-center align-items-center link-logos"
+          class="d-flex flex-wrap justify-content-between align-items-center link-logos gap-2"
         >
           <div class="logo-item">
             <img
@@ -1015,10 +952,7 @@
               loading="lazy"
             />
           </div>
-        </div>
-        <div
-          class="d-flex flex-wrap justify-content-center align-items-center link-logos"
-        >
+
           <div class="logo-item">
             <img src="/img/link1.png" alt="CBV" loading="lazy" />
           </div>
@@ -1189,6 +1123,9 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    <script>
+      AOS.init();
+    </script>
     <script src="/script.js"></script>
     <!-- Back to Top Button -->
     <button id="back-to-top" class="btn" aria-label="Back to top">
