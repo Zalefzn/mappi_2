@@ -1,0 +1,398 @@
+* {
+  font-family: "Figtree", sans-serif;
+}
+
+:root {
+  --topbar-height-mobile: 56px;
+  --topbar-height-md: 72px;
+}
+
+.form-control {
+  width: 362px !important;
+  padding-right: 3.625rem !important;
+}
+
+/* Topbar fixed styles */
+.topbar.fixed-top { position: fixed; top: 0; left: 0; right: 0; z-index: 1060; }
+.topbar.fixed-top .bg-white { box-shadow: 0 6px 18px rgba(4,19,106,0.06); }
+
+/* Move navbar down so it sits below the fixed topbar */
+nav.navbar { margin-top: var(--topbar-height-mobile); }
+
+@media (min-width: 768px) {
+  nav.navbar { margin-top: var(--topbar-height-md); }
+}
+
+.form-control::placeholder {
+  font-size: 14px;
+}
+
+.form-control:focus {
+  box-shadow: none !important;
+  outline: 1px solid #04136a !important;
+}
+
+div.position-relative .search-icon {
+  top: 50%;
+  right: 1.5rem;
+  font-size: 18px;
+  color: #6c757d;
+  position: absolute;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.btn-member {
+  font-size: 12px !important;
+  background-color: #63b1df !important;
+  font-weight: bold !important;
+  color: #04136a !important;
+  border-color: #63b1df !important;
+}
+
+.whatsapp-icon {
+  font-size: 20px;
+}
+
+a.whatsapp span {
+  font-size: 10px;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
+
+.nav-link {
+  font-size: 15px !important;
+}
+
+#jumbroton {
+  /* With static navbar below a fixed topbar, jumbotron is pushed by the nav (no big top margin needed). */
+  margin-top: 0;
+  background-color: #f4f5fa;
+}
+
+.list-card {
+  margin-top: -75px !important;
+}
+
+@media (min-width: 768px) {
+  .btn-member {
+    font-size: 14px !important;
+    padding-top: 0.625rem !important;
+    padding-bottom: 0.625rem !important;
+  }
+
+  .whatsapp-icon {
+    font-size: 28px;
+  }
+
+  a.whatsapp span {
+    font-size: 12px;
+  }
+
+  #jumbroton { margin-top: 0; }
+}
+
+/* Berita MAPPI */
+#berita {
+  background: linear-gradient(180deg, #063E97 0%, rgba(4, 19, 106, 0.85) 100%);
+  color: #ffffff;
+  padding-bottom: 4rem;
+}
+
+#berita h3 { font-size: 36px; font-weight: 900; }
+.btn-outline-light { border-color: rgba(255,255,255,0.35); color: #ffffff; }
+.btn-outline-light:hover { background: rgba(255,255,255,0.07); }
+
+.news-item { color: #fff; }
+.news-number {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: #fff;
+  color: #063E97;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.news-item h6 { color: #fff; font-size: 16px; }
+
+.media-card {
+  margin-top: 2rem;
+  background: linear-gradient(180deg, #ffffff 0%, #e6f1ff 100%);
+  box-shadow: 0 10px 30px rgba(4, 19, 106, 0.06);
+}
+
+.media-track-wrapper { overflow: hidden; }
+.media-track { display: flex; transition: transform 0.3s ease; align-items: center; }
+.media-slide { flex: 0 0 50%; max-width: 50%; display:flex; align-items:center; justify-content:center; }
+.media-slide img { width: 90%; height: auto; display: block; max-height: 72px; object-fit: contain; }
+.media-prev, .media-next { background: transparent; border: 1px solid rgba(4,19,106,0.12); color: #063E97; width: 46px; height: 46px; }
+
+@media (min-width: 768px) {
+  .news-number { width: 56px; height: 56px; }
+  .media-slide img { max-height: 64px; }
+  .media-track { width: 100%; overflow: hidden; }
+  /* desktop: show 5 items */
+  .media-slide { flex: 0 0 20%; max-width: 20%; }
+
+  .media-slide img {
+    max-width: 70%;
+    height: auto;
+  }
+
+  /* Tombol navigasi lebih kecil */
+  .media-prev,
+  .media-next {
+    transform: scale(0.8);
+  }
+}
+
+@media (min-width: 479px) {
+  .news-number { width: 56px; height: 56px; }
+  .media-slide img { max-height: 64px; }
+  .media-track { width: 100%; overflow: hidden; }
+  /* tablet: show 4 items */
+  .media-slide { flex: 0 0 25%; max-width: 25%; }
+
+  .media-slide img {
+    max-width: 70%;
+    height: auto;
+  }
+
+  /* Tombol navigasi lebih kecil */
+  .media-prev,
+  .media-next {
+    transform: scale(0.8);
+  }
+  
+}
+
+  /* Split card for Riset & Pengembangan | Pendaftaran Online */
+  .split-card { overflow: hidden; }
+  .split-card .left-side { background: linear-gradient(180deg,#063E97 0%, rgba(4, 19, 106, 0.95) 100%); }
+  .split-card .left-side h3 { color: #ffffff; }
+  .split-card .icon-circle { display:inline-flex; width:46px; height:46px; align-items:center; justify-content:center; border-radius:10px; font-size:18px; }
+  .split-card .right-side { background: #fff; }
+  .split-card .right-side h4 { color: #04136A; }
+  .split-card .right-side p { color: #4b5563; }
+
+  .text-primary-mappi { color: #063E97 !important; }
+  .split-card .left-side .icon-circle { background: #ffffff; color: #063E97; box-shadow: 0 6px 18px rgba(4, 19, 106, 0.06); }
+  .split-card .left-side .icon-circle i { font-size: 20px; }
+  .split-card .left-side ul li { align-items: center; }
+
+  .split-card .right-side .btn-primary {
+    background: #63b1df !important;
+    border-color: #63b1df !important;
+    color: #04136A !important;
+  }
+
+  /* Info Lainnya */
+
+  .info-card {
+    height: 100%; /* supaya kolom bootstrap sejajar */
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+  }
+
+  .card-thumb {
+    height: 160px; /* sesuaikan sesuai kebutuhan */
+    overflow: hidden;
+  }
+
+  .card-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* crop agar gambar konsisten */
+  }
+
+  .card-caption {
+    flex-grow: 1; /* isi caption flexible dan tidak membuat card memanjang */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #info-lainnya {
+    background: #eaf2ff;
+  }
+  .info-cards-wrapper { background: #dbeafc; padding: 2rem; }
+  .info-card { background: transparent; }
+  .info-card .card-thumb img { display: block; width: 100%; height: 200px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px; }
+  .card-caption { background: rgba(6, 62, 151, 0.12); border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; color: #063E97; }
+  .card-caption strong { display:block; font-weight:700; }
+
+  @media (max-width: 767px) {
+    .info-card .card-thumb img { height: 160px; }
+  }
+
+
+
+
+  @media (max-width: 767px) {
+    .split-card .left-side, .split-card .right-side { padding: 2rem 1.25rem; }
+  }
+
+
+
+/* Announcement Section */
+.announcement-heading {
+  color: #04136A;
+  font-weight: 900;
+  font-size: 34px;
+  margin-bottom: 1.25rem;
+}
+
+/* Back to Top Button */
+#back-to-top {
+  position: fixed;
+  right: 18px;
+  bottom: 22px;
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  background: #063E97;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 20px rgba(4,19,106,0.18);
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 2000;
+}
+
+#back-to-top.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#back-to-top:focus { outline: 2px solid rgba(99,177,223,0.4); }
+
+@media (max-width: 575px) {
+  #back-to-top { right: 12px; bottom: 16px; width: 44px; height: 44px; }
+}
+
+/* Link Terkait */
+#link-terkait { background: #cfe3f8; }
+#link-terkait .link-logos { padding: 2rem 1rem; }
+#link-terkait .logo-item { flex: 0 1 120px; display:flex; align-items:center; justify-content:center; padding: 0.5rem; }
+#link-terkait .logo-item img { max-width: 160px; max-height: 72px; object-fit: contain; display:block; filter: none; }
+
+@media (max-width: 768px) {
+  #link-terkait .logo-item { flex: 0 1 90px; }
+  #link-terkait .logo-item img { max-width: 120px; max-height: 56px; }
+}
+
+
+.announcement-carousel {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.carousel-track-wrapper {
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 1.5rem;
+  transition: transform 0.4s ease;
+}
+
+.carousel-slide {
+  min-width: 48%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 6px 18px rgba(4, 19, 106, 0.08);
+}
+
+.carousel-slide img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  height: 170px;
+}
+
+.carousel-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  border: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #063E97;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.carousel-btn:focus {
+  outline: 2px solid #aaccff;
+}
+
+.btn-prev { left: -10px; }
+.btn-next { right: -10px; }
+
+.carousel-dots button {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background: #d9e4f6;
+  border: none;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.carousel-dots button[aria-selected="true"] { background: #63b1df; }
+
+/* Social cards */
+.social-intro { color: #0d3c7f; font-size: 18px; }
+.social-cards-wrap { flex-wrap: wrap; }
+.social-card {
+  width: 120px;
+}
+.social-card-icon {
+  width: 88px;
+  height: 88px;
+  background: #ffffff;
+  border-radius: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 10px 20px rgba(4, 19, 106, 0.05);
+  font-size: 32px;
+  color: #04136a;
+}
+
+  .bg-primary-mappi{
+    background-color: #010b69;
+
+  }
+/* footer */
+  .site-footer { margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.06); }
+  .footer-content { max-width: 1200px; margin: 0 auto; padding: 22px 18px; display: flex; align-items: center; justify-content: space-between; }
+  .footer-links { display: flex; list-style: none; gap: 12px; margin: 0; padding: 0; }
+  .footer-links a { color: var(--muted); text-decoration: none; }
+  .footer-links a:hover { color: var(--text); }
+  .footer-extended .tile { border: 2px solid rgba(255,255,255,0.6); background: transparent; }
+  .footer-extended .link-light { text-decoration: none; opacity: 0.85; }
+  .footer-extended .link-light:hover { opacity: 1; }
+  .footer-extended i { line-height: 1; }
+@media (min-width: 768px) {
+  .announcement-heading { font-size: 40px; }
+  .carousel-slide img { height: 230px; }
+}
+
