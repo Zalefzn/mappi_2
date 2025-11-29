@@ -1,723 +1,757 @@
 <!DOCTYPE html>
 <html lang="id">
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Home</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
 
-      <!-- CSS -->
-      <link rel="stylesheet" href="/assets/css/index.css" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/index.css" />
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-      <!-- CSS Bootstrap -->
-      <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-        crossorigin="anonymous"
-      />
+    <!-- CSS Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
 
-      <!-- Google Fonts -->
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
-        rel="stylesheet"
-      />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
 
-      <!-- Bootstrap Icons -->
-      <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
-      />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
 
-      <style>
-        #berita-data {
-          background-color: #ffffff;
-          color: #000000;
-          padding-bottom: 4rem;
-        }
+    <style>
+      #berita-data {
+        background-color: #ffffff;
+        color: #000000;
+        padding-bottom: 4rem;
+      }
 
-        /* override background putih dari Bootstrap */
-        .bg-white {
-          background-color: #ffff !important;
-        }
+      /* override background putih dari Bootstrap */
+      .bg-white {
+        background-color: #ffff !important;
+      }
 
-        /* override section yang pakai bg-body-primary-emphasis */
-        .bg-body-primary-emphasis {
-          background-color: #f4f5fa !important;
-        }
+      /* override section yang pakai bg-body-primary-emphasis */
+      .bg-body-primary-emphasis {
+        background-color: #f4f5fa !important;
+      }
 
-        /* footer tetap gelap, biarkan default */
-        .footer-extended {
-          background-color: #010b69; /* atau sesuai yang diinginkan */
-        }
+      /* footer tetap gelap, biarkan default */
+      .footer-extended {
+        background-color: #010b69; /* atau sesuai yang diinginkan */
+      }
 
-        .text-primary-mappi {
-          color: #010b69;
-        }
-        .section-title-wrapper {
-          display: flex;
-          align-items: center;
-          gap: 1rem;
-          width: 100%;
-        }
+      .text-primary-mappi {
+        color: #010b69;
+      }
+      .section-title-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+      }
 
-        .section-title-wrapper h3 {
-          margin: 0;
-          white-space: nowrap;
-          color: #ffffff;
-        }
+      .section-title-wrapper h3 {
+        margin: 0;
+        white-space: nowrap;
+        color: #ffffff;
+      }
 
-        .section-title-wrapper {
-          display: flex;
-          align-items: center;
-          width: 100%;
-          gap: 1rem;
-        }
+      .section-title-wrapper {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        gap: 1rem;
+      }
 
-        /* Garis fleksibel di tengah */
-        .section-divider {
-          flex-grow: 1;
-          height: 1px;
-          background: rgba(255, 255, 255, 0.4);
-        }
+      /* Garis fleksibel di tengah */
+      .section-divider {
+        flex-grow: 1;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.4);
+      }
 
-        .schedule-section {
-          background: #f6f8fc;
-        }
-        .schedule-tabs .nav-link {
-          color: #6b7785;
-          padding: 8px 12px;
-        }
-        .schedule-tabs .nav-link.active {
-          color: #0a2a84;
-          font-weight: 700;
-          border-bottom: 2px solid #0a2a84;
-        }
-        .schedule-list .list-group-item {
-          background: transparent;
-        }
-        .tag {
-          display: inline-block;
-          padding: 6px 10px;
-          border-radius: 999px;
-          background: #e8f0ff;
-          color: #0a2a84;
-          font-weight: 600;
-        }
-        .tag.primary {
-          background: #0a2a84;
-          color: #fff;
-        }
-      </style>
-    </head>
+      .schedule-section {
+        background: #f6f8fc;
+      }
+      .schedule-tabs .nav-link {
+        color: #6b7785;
+        padding: 8px 12px;
+      }
+      .schedule-tabs .nav-link.active {
+        color: #0a2a84;
+        font-weight: 700;
+        border-bottom: 2px solid #0a2a84;
+      }
+      .schedule-list .list-group-item {
+        background: transparent;
+      }
+      .tag {
+        display: inline-block;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: #e8f0ff;
+        color: #0a2a84;
+        font-weight: 600;
+      }
+      .tag.primary {
+        background: #0a2a84;
+        color: #fff;
+      }
 
-    <body>
-      <!-- TOPBAR FIXED -->
-      <div class="fixed-top bg-white shadow-sm">
-        <div class="container py-2 py-md-3 d-flex align-items-center">
-          <!-- Search (mobile & desktop) -->
-          <div class="me-auto" style="max-width: 450px; width: 100%">
-            <div class="position-relative w-100">
-              <i
-                class="bi bi-search"
-                style="
-                  position: absolute;
-                  right: 110px;
-                  top: 50%;
-                  transform: translateY(-50%);
-                  font-size: 18px;
-                  color: #6c757d;
-                "
-              ></i>
-              <input
-                type="text"
-                class="form-control ps-4 pe-5 py-2 rounded-pill bg-light border-0"
-                placeholder="Ketik untuk mencari"
-                style="height: 46px"
-              />
-            </div>
+      /* Animasi yang lebih smooth */
+      [data-aos] {
+        pointer-events: none;
+      }
+      [data-aos].aos-animate {
+        pointer-events: auto;
+      }
+
+      /* Accordion styling */
+      .accordion-item {
+        border: 1px solid #dee2e6;
+        margin-bottom: -1px;
+      }
+      .accordion-button:not(.collapsed) {
+        background-color: #010b69;
+        color: white;
+      }
+      .accordion-button:focus {
+        box-shadow: none;
+        border-color: #010b69;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- TOPBAR FIXED -->
+    <div class="fixed-top bg-white shadow-sm">
+      <div class="container py-2 py-md-3 d-flex align-items-center">
+        <!-- Search (mobile & desktop) -->
+        <div class="me-auto" style="max-width: 450px; width: 100%">
+          <div class="position-relative w-100">
+            <i
+              class="bi bi-search"
+              style="
+                position: absolute;
+                right: 110px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 18px;
+                color: #6c757d;
+              "
+            ></i>
+            <input
+              type="text"
+              class="form-control ps-4 pe-5 py-2 rounded-pill bg-light border-0"
+              placeholder="Ketik untuk mencari"
+              style="height: 46px"
+            />
           </div>
+        </div>
 
-          <!-- Right Buttons (Desktop Only) -->
-          <div class="d-none d-md-flex align-items-center ms-auto gap-4">
-            <a href="./login.html" class="text-decoration-none">
-              <button class="btn btn-primary px-4 rounded-pill">Member</button>
-            </a>
+        <!-- Right Buttons (Desktop Only) -->
+        <div class="d-none d-md-flex align-items-center ms-auto gap-4">
+          <a href="./login.html" class="text-decoration-none">
+            <button class="btn btn-primary px-4 rounded-pill">Member</button>
+          </a>
 
-            <a
-              href="https://wa.me/62811219810"
-              class="text-decoration-none text-reset d-flex align-items-center gap-2"
-              target="_blank"
-            >
-              <i class="bi bi-whatsapp fs-4 text-success"></i>
-              <span class="fw-bold">MAPPI Official</span>
-            </a>
+          <a
+            href="https://wa.me/62811219810"
+            class="text-decoration-none text-reset d-flex align-items-center gap-2"
+            target="_blank"
+          >
+            <i class="bi bi-whatsapp fs-4 text-success"></i>
+            <span class="fw-bold">MAPPI Official</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav
+      class="navbar navbar-expand-xl"
+      style="background-color: #ffff; margin-top: 90px"
+    >
+      <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">
+          <img
+            src="/assets/images/logo_with_text.png"
+            width="218"
+            alt="logo"
+          />
+        </a>
+
+        <!-- Toggler -->
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Beranda</a>
+            </li>
+
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                data-bs-toggle="dropdown"
+                >Tentang MAPPI</a
+              >
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                data-bs-toggle="dropdown"
+                >Peraturan & Standard</a
+              >
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="./blog.html"
+                data-bs-toggle="dropdown"
+                >Berita & Pustaka</a
+              >
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="./blog.html">Action</a>
+                </li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                data-bs-toggle="dropdown"
+                >Pendidikan</a
+              >
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                data-bs-toggle="dropdown"
+                >Sertifikasi</a
+              >
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                data-bs-toggle="dropdown"
+                >Hubungi Kami</a
+              >
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+              </ul>
+            </li>
+
+            <!-- Mobile Login Button -->
+            <li class="nav-item d-xl-none mt-2">
+              <a
+                href="./login.html"
+                class="nav-link btn btn-primary rounded-pill text-center w-100"
+              >
+                Login / Member
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section id="berita-data" class="mb-4">
+      <div class="container pt-5">
+        <p class="text-black" data-aos="fade-up" data-aos-duration="600">
+          Beranda/<a class="text-primary">Berita & Pustaka</a>
+        </p>
+        <h2 class="h3 fw-bold text-primary-mappi mb-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+          Kumpulan Berita MAPPI
+        </h2>
+        <div class="p-3 p-md-4 rounded-4 bg-body-primary-emphasis" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
+          <div class="row g-3 g-md-4">
+            <div class="col-12 col-md-4">
+              <div class="border rounded-3 overflow-hidden" data-aos="fade-right" data-aos-duration="600">
+                <div class="accordion accordion-flush" id="newsAccordion">
+                  <div class="accordion-item bg-primary-mappi" data-aos="fade-right" data-aos-duration="600" data-aos-delay="100">
+                    <h2 class="accordion-header" id="headingOne">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne"
+                        aria-expanded="false"
+                        aria-controls="collapseOne"
+                      >
+                        Berita Terkini
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseOne"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="headingOne"
+                      data-bs-parent="#newsAccordion"
+                    >
+                      <div class="accordion-body">
+                        <a href="#" class="link-primary"
+                          >Selengkapnya <span class="ms-1">›</span></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item" data-aos="fade-right" data-aos-duration="600" data-aos-delay="150">
+                    <h2 class="accordion-header" id="headingTwo">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo"
+                        aria-expanded="false"
+                        aria-controls="collapseTwo"
+                      >
+                        Kegiatan MAPPI
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseTwo"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="headingTwo"
+                      data-bs-parent="#newsAccordion"
+                    >
+                      <div class="accordion-body">
+                        <a href="#" class="link-primary"
+                          >Selengkapnya <span class="ms-1">›</span></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item" data-aos="fade-right" data-aos-duration="600" data-aos-delay="200">
+                    <h2 class="accordion-header" id="headingThree">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree"
+                        aria-expanded="false"
+                        aria-controls="collapseThree"
+                      >
+                        Photo Gallery
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseThree"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="headingThree"
+                      data-bs-parent="#newsAccordion"
+                    >
+                      <div class="accordion-body">
+                        <a href="#" class="link-primary"
+                          >Selengkapnya <span class="ms-1">›</span></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item" data-aos="fade-right" data-aos-duration="600" data-aos-delay="250">
+                    <h2 class="accordion-header" id="headingFour">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseFour"
+                        aria-expanded="false"
+                        aria-controls="collapseFour"
+                      >
+                        Buku
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseFour"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="headingFour"
+                      data-bs-parent="#newsAccordion"
+                    >
+                      <div class="accordion-body">
+                        <a href="#" class="link-primary"
+                          >Selengkapnya <span class="ms-1">›</span></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item" data-aos="fade-right" data-aos-duration="600" data-aos-delay="300">
+                    <h2 class="accordion-header" id="headingFive">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseFive"
+                        aria-expanded="false"
+                        aria-controls="collapseFive"
+                      >
+                        E-Directory
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseFive"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="headingFive"
+                      data-bs-parent="#newsAccordion"
+                    >
+                      <div class="accordion-body">
+                        <a href="#" class="link-primary"
+                          >Selengkapnya <span class="ms-1">›</span></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item" data-aos="fade-right" data-aos-duration="600" data-aos-delay="350">
+                    <h2 class="accordion-header" id="headingSix">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseSix"
+                        aria-expanded="false"
+                        aria-controls="collapseSix"
+                      >
+                        Laporan
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseSix"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="headingSix"
+                      data-bs-parent="#newsAccordion"
+                    >
+                      <div class="accordion-body">
+                        <a href="#" class="link-primary"
+                          >Selengkapnya <span class="ms-1">›</span></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item" data-aos="fade-right" data-aos-duration="600" data-aos-delay="400">
+                    <h2 class="accordion-header" id="headingSeven">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseSeven"
+                        aria-expanded="false"
+                        aria-controls="collapseSeven"
+                      >
+                        E-Magazine
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseSeven"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="headingSeven"
+                      data-bs-parent="#newsAccordion"
+                    >
+                      <div class="accordion-body">
+                        <a href="#" class="link-primary"
+                          >Selengkapnya <span class="ms-1">›</span></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-8">
+              <ul class="list-unstyled">
+                <li class="pb-3 mb-3 border-bottom" data-aos="fade-left" data-aos-duration="600" data-aos-delay="100">
+                  <h6 class="mb-1 fw-semibold">
+                    Pendidikan Profesional Berkelanjutan (PPL) Workshop
+                    Memahami Laporan Keuangan dalam Penilaian
+                  </h6>
+                  <div class="text-muted small">
+                    Jakarta, 22 September 2025
+                  </div>
+                  <a href="#" class="link-primary"
+                    >Selengkapnya <span class="ms-1">›</span></a
+                  >
+                </li>
+                <li class="pb-3 mb-3 border-bottom" data-aos="fade-left" data-aos-duration="600" data-aos-delay="150">
+                  <h6 class="mb-1 fw-semibold">
+                    Pendidikan Profesional Berkelanjutan (PPL) Workshop
+                    Memahami Laporan Keuangan dalam Penilaian
+                  </h6>
+                  <div class="text-muted small">
+                    Jakarta, 22 September 2025
+                  </div>
+                  <a href="#" class="link-primary"
+                    >Selengkapnya <span class="ms-1">›</span></a
+                  >
+                </li>
+                <li class="pb-3 mb-3 border-bottom" data-aos="fade-left" data-aos-duration="600" data-aos-delay="200">
+                  <h6 class="mb-1 fw-semibold">
+                    Pendidikan Profesional Berkelanjutan (PPL) Workshop
+                    Memahami Laporan Keuangan dalam Penilaian
+                  </h6>
+                  <div class="text-muted small">
+                    Jakarta, 22 September 2025
+                  </div>
+                  <a href="#" class="link-primary"
+                    >Selengkapnya <span class="ms-1">›</span></a
+                  >
+                </li>
+                <li class="pb-3 mb-3 border-bottom" data-aos="fade-left" data-aos-duration="600" data-aos-delay="250">
+                  <h6 class="mb-1 fw-semibold">
+                    Pendidikan Profesional Berkelanjutan (PPL) Workshop
+                    Memahami Laporan Keuangan dalam Penilaian
+                  </h6>
+                  <div class="text-muted small">
+                    Jakarta, 22 September 2025
+                  </div>
+                  <a href="#" class="link-primary underlide"
+                    >Selengkapnya <span class="ms-1">›</span></a
+                  >
+                </li>
+                <li class="pb-3 mb-3 border-bottom" data-aos="fade-left" data-aos-duration="600" data-aos-delay="300">
+                  <h6 class="mb-1 fw-semibold">
+                    Pendidikan Profesional Berkelanjutan (PPL) Workshop
+                    Memahami Laporan Keuangan dalam Penilaian
+                  </h6>
+                  <div class="text-muted small">
+                    Jakarta, 22 September 2025
+                  </div>
+                  <a href="#" class="link-primary"
+                    >Selengkapnya <span class="ms-1">›</span></a
+                  >
+                </li>
+              </ul>
+              <nav aria-label="Halaman berita">
+                <ul class="pagination pagination-sm justify-content-end mb-0" data-aos="fade-up" data-aos-duration="600" data-aos-delay="350">
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">‹</a>
+                  </li>
+                  <li class="page-item active" aria-current="page">
+                    <span class="page-link">1</span>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">2</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">3</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">4</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">›</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- NAVBAR -->
-      <nav
-        class="navbar navbar-expand-xl"
-        style="background-color: #ffff; margin-top: 90px"
-      >
-        <div class="container">
-          <!-- Logo -->
-          <a class="navbar-brand" href="#">
-            <img
-              src="/assets/images/logo_with_text.png"
-              width="218"
-              alt="logo"
-            />
-          </a>
+    <footer class="footer-extended bg-primary-mappi text-white pt-5 pb-4">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-12 col-lg-3" data-aos="fade-up" data-aos-duration="600">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <img style="width: 50px" src="img/images (1).png" alt="logo" />
+              <span class="fs-3 fw-bold">MAPPI</span>
+            </div>
+            <div class="mb-3">
+              <div class="d-flex gap-3">
+                <i class="bi-geo-alt fs-5"></i>
+                <div>
+                  <div class="fw-semibold">Kantor</div>
+                  <div class="small opacity-75">
+                    Jalan TB Simatupang Kav.18 18 Office Park<br />3rd Floor,
+                    Suite F, Jakarta Selatan
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="d-flex gap-3">
+                <i class="bi-envelope fs-5"></i>
+                <div>
+                  <div class="fw-semibold">Email</div>
+                  <div class="small opacity-75">info@mappi.or.id</div>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="d-flex gap-3">
+                <i class="bi-telephone fs-5"></i>
+                <div>
+                  <div class="fw-semibold">Nomor telepon</div>
+                  <div class="small opacity-75">
+                    021-22783000 / 021-22783111
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="d-flex gap-3">
+                <i class="bi-instagram fs-5"></i>
+                <div>
+                  <div class="fw-semibold">Media Social</div>
+                  <div class="small opacity-75">
+                    mappi_info<br />mappi_info<br />mappi official
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-          <!-- Toggler -->
-          <button
-            class="navbar-toggler border-0"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
+          <div class="col-12 col-lg-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <i class="bi-grid-3x3-gap-fill fs-5"></i>
+              <span class="fw-semibold">Menu</span>
+            </div>
+            <div class="row row-cols-1 g-2">
+              <div class="col">
+                <a href="#" class="link-light">Beranda</a>
+              </div>
+              <div class="col">
+                <a href="#" class="link-light">Tentang MAPPI</a>
+              </div>
+              <div class="col">
+                <a href="#" class="link-light">Peraturan & Standard</a>
+              </div>
+              <div class="col"><a href="#" class="link-light">Berita</a></div>
+              <div class="col">
+                <a href="#" class="link-light">Pendidikan</a>
+              </div>
+              <div class="col">
+                <a href="#" class="link-light">Sertifikasi</a>
+              </div>
+              <div class="col">
+                <a href="#" class="link-light">Hubungi Kami</a>
+              </div>
+            </div>
+          </div>
 
-          <!-- Menu -->
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="./index.html">Beranda</a>
+          <div class="col-12 col-lg-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <i class="bi-journal-bookmark fs-5"></i>
+              <span class="fw-semibold">Pendidikan & Sertifikasi</span>
+            </div>
+            <ul class="list-unstyled d-flex flex-column gap-2 ps-0">
+              <li>
+                <a href="#" class="link-light">Pendidikan Dasar Penilai 1</a>
               </li>
-
-              <!-- Dropdown -->
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  data-bs-toggle="dropdown"
-                  >Tentang MAPPI</a
-                >
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                </ul>
+              <li>
+                <a href="#" class="link-light">Pendidikan Dasar Penilai 2</a>
               </li>
-
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  data-bs-toggle="dropdown"
-                  >Peraturan & Standard</a
-                >
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                </ul>
+              <li>
+                <a href="#" class="link-light">Pendidikan Dasar SPI (PDS)</a>
               </li>
-
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="./blog.html"
-                  data-bs-toggle="dropdown"
-                  >Berita & Pustaka</a
-                >
-                <ul class="dropdown-menu">
-                  <li>
-                    <a class="dropdown-item" href="./blog.html">Action</a>
-                  </li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                </ul>
+              <li>
+                <a href="#" class="link-light">Pendidikan Lanjut Penilai 1</a>
               </li>
-
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  data-bs-toggle="dropdown"
-                  >Pendidikan</a
-                >
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                </ul>
+              <li>
+                <a href="#" class="link-light">Pendidikan Lanjut Penilai 2</a>
               </li>
-
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  data-bs-toggle="dropdown"
-                  >Sertifikasi</a
-                >
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                </ul>
+              <li>
+                <a href="#" class="link-light">Pendidikan Lanjut SPI (PLS)</a>
               </li>
-
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  data-bs-toggle="dropdown"
-                  >Hubungi Kami</a
-                >
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                </ul>
-              </li>
-
-              <!-- Mobile Login Button -->
-              <li class="nav-item d-xl-none mt-2">
-                <a
-                  href="./login.html"
-                  class="nav-link btn btn-primary rounded-pill text-center w-100"
-                >
-                  Login / Member
-                </a>
-              </li>
+              <li><a href="#" class="link-light">Sertifikasi</a></li>
             </ul>
           </div>
-        </div>
-      </nav>
 
-      <section id="berita-data" class="mb-4">
-        <div class="container pt-5">
-          <p class="text-black">
-            Beranda/<a class="text-primary">Berita & Pustaka</a>
-          </p>
-          <h2 class="h3 fw-bold text-primary-mappi mb-3">
-            Kumpulan Berita MAPPI
-          </h2>
-          <div class="p-3 p-md-4 rounded-4 bg-body-primary-emphasis">
-            <div class="row g-3 g-md-4">
-              <div class="col-12 col-md-4">
-                <div class="border rounded-3 overflow-hidden">
-                  <div class="accordion accordion-flush" id="newsAccordion">
-                    <div class="accordion-item bg-primary-mappi">
-                      <h2 class="accordion-header" id="headingOne">
-                        <button
-                          class="accordion-button collapsed"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseOne"
-                          aria-expanded="false"
-                          aria-controls="collapseOne"
-                        >
-                          Berita Terkini
-                        </button>
-                      </h2>
-                      <div
-                        id="collapseOne"
-                        class="accordion-collapse collapse"
-                        aria-labelledby="headingOne"
-                        data-bs-parent="#newsAccordion"
-                      >
-                        <div class="accordion-body">
-                          <a href="#" class="link-primary"
-                            >Selengkapnya <span class="ms-1">›</span></a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingTwo">
-                        <button
-                          class="accordion-button collapsed"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseTwo"
-                          aria-expanded="false"
-                          aria-controls="collapseTwo"
-                        >
-                          Kegiatan MAPPI
-                        </button>
-                      </h2>
-                      <div
-                        id="collapseTwo"
-                        class="accordion-collapse collapse"
-                        aria-labelledby="headingTwo"
-                        data-bs-parent="#newsAccordion"
-                      >
-                        <div class="accordion-body">
-                          <a href="#" class="link-primary"
-                            >Selengkapnya <span class="ms-1">›</span></a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingThree">
-                        <button
-                          class="accordion-button collapsed"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseThree"
-                          aria-expanded="false"
-                          aria-controls="collapseThree"
-                        >
-                          Photo Gallery
-                        </button>
-                      </h2>
-                      <div
-                        id="collapseThree"
-                        class="accordion-collapse collapse"
-                        aria-labelledby="headingThree"
-                        data-bs-parent="#newsAccordion"
-                      >
-                        <div class="accordion-body">
-                          <a href="#" class="link-primary"
-                            >Selengkapnya <span class="ms-1">›</span></a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingFour">
-                        <button
-                          class="accordion-button collapsed"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseFour"
-                          aria-expanded="false"
-                          aria-controls="collapseFour"
-                        >
-                          Buku
-                        </button>
-                      </h2>
-                      <div
-                        id="collapseFour"
-                        class="accordion-collapse collapse"
-                        aria-labelledby="headingFour"
-                        data-bs-parent="#newsAccordion"
-                      >
-                        <div class="accordion-body">
-                          <a href="#" class="link-primary"
-                            >Selengkapnya <span class="ms-1">›</span></a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingFive">
-                        <button
-                          class="accordion-button collapsed"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseFive"
-                          aria-expanded="false"
-                          aria-controls="collapseFive"
-                        >
-                          E-Directory
-                        </button>
-                      </h2>
-                      <div
-                        id="collapseFive"
-                        class="accordion-collapse collapse"
-                        aria-labelledby="headingFive"
-                        data-bs-parent="#newsAccordion"
-                      >
-                        <div class="accordion-body">
-                          <a href="#" class="link-primary"
-                            >Selengkapnya <span class="ms-1">›</span></a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingSix">
-                        <button
-                          class="accordion-button collapsed"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseSix"
-                          aria-expanded="false"
-                          aria-controls="collapseSix"
-                        >
-                          Laporan
-                        </button>
-                      </h2>
-                      <div
-                        id="collapseSix"
-                        class="accordion-collapse collapse"
-                        aria-labelledby="headingSix"
-                        data-bs-parent="#newsAccordion"
-                      >
-                        <div class="accordion-body">
-                          <a href="#" class="link-primary"
-                            >Selengkapnya <span class="ms-1">›</span></a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingSeven">
-                        <button
-                          class="accordion-button collapsed"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseSeven"
-                          aria-expanded="false"
-                          aria-controls="collapseSeven"
-                        >
-                          E-Magazine
-                        </button>
-                      </h2>
-                      <div
-                        id="collapseSeven"
-                        class="accordion-collapse collapse"
-                        aria-labelledby="headingSeven"
-                        data-bs-parent="#newsAccordion"
-                      >
-                        <div class="accordion-body">
-                          <a href="#" class="link-primary"
-                            >Selengkapnya <span class="ms-1">›</span></a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-8">
-                <ul class="list-unstyled">
-                  <li class="pb-3 mb-3 border-bottom">
-                    <h6 class="mb-1 fw-semibold">
-                      Pendidikan Profesional Berkelanjutan (PPL) Workshop
-                      Memahami Laporan Keuangan dalam Penilaian
-                    </h6>
-                    <div class="text-muted small">
-                      Jakarta, 22 September 2025
-                    </div>
-                    <a href="#" class="link-primary"
-                      >Selengkapnya <span class="ms-1">›</span></a
-                    >
-                  </li>
-                  <li class="pb-3 mb-3 border-bottom">
-                    <h6 class="mb-1 fw-semibold">
-                      Pendidikan Profesional Berkelanjutan (PPL) Workshop
-                      Memahami Laporan Keuangan dalam Penilaian
-                    </h6>
-                    <div class="text-muted small">
-                      Jakarta, 22 September 2025
-                    </div>
-                    <a href="#" class="link-primary"
-                      >Selengkapnya <span class="ms-1">›</span></a
-                    >
-                  </li>
-                  <li class="pb-3 mb-3 border-bottom">
-                    <h6 class="mb-1 fw-semibold">
-                      Pendidikan Profesional Berkelanjutan (PPL) Workshop
-                      Memahami Laporan Keuangan dalam Penilaian
-                    </h6>
-                    <div class="text-muted small">
-                      Jakarta, 22 September 2025
-                    </div>
-                    <a href="#" class="link-primary"
-                      >Selengkapnya <span class="ms-1">›</span></a
-                    >
-                  </li>
-                  <li class="pb-3 mb-3 border-bottom">
-                    <h6 class="mb-1 fw-semibold">
-                      Pendidikan Profesional Berkelanjutan (PPL) Workshop
-                      Memahami Laporan Keuangan dalam Penilaian
-                    </h6>
-                    <div class="text-muted small">
-                      Jakarta, 22 September 2025
-                    </div>
-                    <a href="#" class="link-primary underlide"
-                      >Selengkapnya <span class="ms-1">›</span></a
-                    >
-                  </li>
-                  <li class="pb-3 mb-3 border-bottom">
-                    <h6 class="mb-1 fw-semibold">
-                      Pendidikan Profesional Berkelanjutan (PPL) Workshop
-                      Memahami Laporan Keuangan dalam Penilaian
-                    </h6>
-                    <div class="text-muted small">
-                      Jakarta, 22 September 2025
-                    </div>
-                    <a href="#" class="link-primary"
-                      >Selengkapnya <span class="ms-1">›</span></a
-                    >
-                  </li>
-                </ul>
-                <nav aria-label="Halaman berita">
-                  <ul class="pagination pagination-sm justify-content-end mb-0">
-                    <li class="page-item">
-                      <a class="page-link" href="#" aria-label="Previous">‹</a>
-                    </li>
-                    <li class="page-item active" aria-current="page">
-                      <span class="page-link">1</span>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" href="#">2</a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" href="#">3</a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" href="#">4</a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" href="#" aria-label="Next">›</a>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
+          <div class="col-12 col-lg-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <i class="bi-layout-text-sidebar-reverse fs-5"></i>
+              <span class="fw-semibold">Lainnya</span>
+            </div>
+            <div
+              class="tile p-3 rounded-4 mb-3 d-flex align-items-center gap-3"
+            >
+              <i class="bi-search fs-3"></i>
+              <div class="fw-semibold">Riset & Pengembangan</div>
+            </div>
+            <div class="tile p-3 rounded-4 d-flex align-items-center gap-3">
+              <i class="bi-bag fs-3"></i>
+              <div class="fw-semibold">E-Commerce</div>
             </div>
           </div>
         </div>
-      </section>
 
-      <footer class="footer-extended bg-primary-mappi text-white pt-5 pb-4">
-        <div class="container">
-          <div class="row gy-4">
-            <div class="col-12 col-lg-3">
-              <div class="d-flex align-items-center gap-2 mb-3">
-                <img style="width: 50px" src="img/images (1).png" alt="logo" />
-                <!-- <i class="bi-shield-check fs-3"></i> -->
-                <span class="fs-3 fw-bold">MAPPI</span>
-              </div>
-              <div class="mb-3">
-                <div class="d-flex gap-3">
-                  <i class="bi-geo-alt fs-5"></i>
-                  <div>
-                    <div class="fw-semibold">Kantor</div>
-                    <div class="small opacity-75">
-                      Jalan TB Simatupang Kav.18 18 Office Park<br />3rd Floor,
-                      Suite F, Jakarta Selatan
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="mb-3">
-                <div class="d-flex gap-3">
-                  <i class="bi-envelope fs-5"></i>
-                  <div>
-                    <div class="fw-semibold">Email</div>
-                    <div class="small opacity-75">info@mappi.or.id</div>
-                  </div>
-                </div>
-              </div>
-              <div class="mb-3">
-                <div class="d-flex gap-3">
-                  <i class="bi-telephone fs-5"></i>
-                  <div>
-                    <div class="fw-semibold">Nomor telepon</div>
-                    <div class="small opacity-75">
-                      021-22783000 / 021-22783111
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div class="d-flex gap-3">
-                  <i class="bi-instagram fs-5"></i>
-                  <div>
-                    <div class="fw-semibold">Media Social</div>
-                    <div class="small opacity-75">
-                      mappi_info<br />mappi_info<br />mappi official
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 col-lg-3">
-              <div class="d-flex align-items-center gap-2 mb-3">
-                <i class="bi-grid-3x3-gap-fill fs-5"></i>
-                <span class="fw-semibold">Menu</span>
-              </div>
-              <div class="row row-cols-1 g-2">
-                <div class="col">
-                  <a href="#" class="link-light">Beranda</a>
-                </div>
-                <div class="col">
-                  <a href="#" class="link-light">Tentang MAPPI</a>
-                </div>
-                <div class="col">
-                  <a href="#" class="link-light">Peraturan & Standard</a>
-                </div>
-                <div class="col"><a href="#" class="link-light">Berita</a></div>
-                <div class="col">
-                  <a href="#" class="link-light">Pendidikan</a>
-                </div>
-                <div class="col">
-                  <a href="#" class="link-light">Sertifikasi</a>
-                </div>
-                <div class="col">
-                  <a href="#" class="link-light">Hubungi Kami</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 col-lg-3">
-              <div class="d-flex align-items-center gap-2 mb-3">
-                <i class="bi-journal-bookmark fs-5"></i>
-                <span class="fw-semibold">Pendidikan & Sertifikasi</span>
-              </div>
-              <ul class="list-unstyled d-flex flex-column gap-2 ps-0">
-                <li>
-                  <a href="#" class="link-light">Pendidikan Dasar Penilai 1</a>
-                </li>
-                <li>
-                  <a href="#" class="link-light">Pendidikan Dasar Penilai 2</a>
-                </li>
-                <li>
-                  <a href="#" class="link-light">Pendidikan Dasar SPI (PDS)</a>
-                </li>
-                <li>
-                  <a href="#" class="link-light">Pendidikan Lanjut Penilai 1</a>
-                </li>
-                <li>
-                  <a href="#" class="link-light">Pendidikan Lanjut Penilai 2</a>
-                </li>
-                <li>
-                  <a href="#" class="link-light">Pendidikan Lanjut SPI (PLS)</a>
-                </li>
-                <li><a href="#" class="link-light">Sertifikasi</a></li>
-              </ul>
-            </div>
-
-            <div class="col-12 col-lg-3">
-              <div class="d-flex align-items-center gap-2 mb-3">
-                <i class="bi-layout-text-sidebar-reverse fs-5"></i>
-                <span class="fw-semibold">Lainnya</span>
-              </div>
-              <div
-                class="tile p-3 rounded-4 mb-3 d-flex align-items-center gap-3"
-              >
-                <i class="bi-search fs-3"></i>
-                <div class="fw-semibold">Riset & Pengembangan</div>
-              </div>
-              <div class="tile p-3 rounded-4 d-flex align-items-center gap-3">
-                <i class="bi-bag fs-3"></i>
-                <div class="fw-semibold">E-Commerce</div>
-              </div>
-            </div>
-          </div>
-
-          <hr class="border-light opacity-25 my-4" />
-          <div
-            class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-2"
-          >
-            <div class="small opacity-75">
-              Copyright © 2016–2025, MAPPI. All Rights Reserved
-            </div>
+        <hr class="border-light opacity-25 my-4" />
+        <div
+          class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-2"
+        >
+          <div class="small opacity-75">
+            Copyright © 2016–2025, MAPPI. All Rights Reserved
           </div>
         </div>
-      </footer>
+      </div>
+    </footer>
 
-      <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"
-      ></script>
-    </body>
-  </html>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      // Inisialisasi AOS
+      AOS.init({
+        duration: 600,
+        easing: 'ease-out-cubic',
+        once: true,
+        offset: 50,
+        delay: 0
+      });
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

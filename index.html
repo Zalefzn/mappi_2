@@ -37,14 +37,18 @@
         border-bottom: 6px solid #0041a2 !important;
       }
 
+      /* Hover effect */
       .card-gradient {
-        background: linear-gradient(180deg, #dce6f7 0%, #f1f4fa 100%);
+        transition: all 0.3s ease;
       }
 
-      .gradient-text {
-        background: linear-gradient(90deg, #003ea8 0%, #0066ff 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+      .card-gradient:hover {
+        background-color: #0041a2 !important; /* Biru */
+        color: #fff !important;
+      }
+
+      .card-gradient:hover h6 {
+        color: #fff !important;
       }
 
       #berita {
@@ -87,6 +91,191 @@
           255,
           0.1
         ); /* semi-transparan agar kontras */
+      }
+
+      .social-card {
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .social-card-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 12px;
+        background: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 28px;
+        transition: all 0.3s ease;
+      }
+
+      .social-card small {
+        color: #333;
+      }
+
+      /* Hover */
+      .social-card:hover .social-card-icon {
+        background-color: #0041a2; /* biru */
+        color: #fff; /* icon jadi putih */
+      }
+
+      .social-card:hover sma ll {
+        color: #0041a2; /* teks jadi biru */
+      }
+
+      /* Jika ingin teksnya ikut jadi putih saat hover card */
+      .social-card:hover a small,
+      .social-card:hover small {
+        color: #fff !important;
+      }
+
+      /* Style dasar setiap list item */
+      .left-side ul li {
+        padding: 10px 12px;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+      }
+
+      /* Hover */
+      .left-side ul li:hover {
+        background: #ffffff; /* putih */
+        cursor: pointer;
+      }
+
+      /* Icon berubah biru saat hover */
+
+      /* Text berubah biru saat hover */
+      .left-side ul li:hover div {
+        color: #0041a2 !important;
+      }
+
+      .info-card {
+        background: #ffffff;
+        border: 1px solid #e5e5e5;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      /* Thumbnail */
+      .info-card .card-thumb img {
+        transition: all 0.3s ease;
+      }
+
+      /* Hover Effect */
+      .info-card:hover {
+        background: #0041a2; /* Biru */
+        transform: translateY(-6px);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Image gelap saat hover */
+      .info-card:hover .card-thumb img {
+        filter: brightness(0.7);
+      }
+
+      /* Teks putih saat hover */
+      .info-card:hover .card-caption strong,
+      .info-card:hover .card-caption .small {
+        color: #fff !important;
+      }
+
+      .tile {
+        background: #f8f9fa;
+        border: 1px solid #e6e6e6;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      /* Hover */
+      .tile:hover {
+        background: #0d6efd; /* Biru */
+        color: #fff;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12);
+      }
+
+      /* Icon jadi putih */
+      .tile:hover i {
+        color: #fff !important;
+      }
+
+      /* Teks jadi putih */
+      .tile:hover .fw-semibold {
+        color: #fff !important;
+      }
+
+      /* Dropdown wrapper */
+      .navbar .dropdown-menu {
+        background: #002b7f; /* biru gelap */
+        border: none;
+        border-radius: 18px;
+        padding: 12px 0;
+        min-width: 250px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        margin-top: 15px; /* jarak dropdown dari menu */
+      }
+
+      /* Dropdown item */
+      .navbar .dropdown-item {
+        color: #fff;
+        padding: 10px 20px;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        position: relative;
+      }
+
+      /* Hover item */
+      .navbar .dropdown-item:hover {
+        background: rgba(255, 255, 255, 0.15);
+        color: #fff;
+      }
+
+      /* Icon “>” di kanan untuk item yang punya sub */
+      .navbar .dropdown-item::after {
+        content: "›"; /* panah */
+        position: absolute;
+        right: 20px;
+        opacity: 0.5;
+        transition: all 0.2s ease;
+      }
+
+      /* Panah saat hover */
+      .navbar .dropdown-item:hover::after {
+        opacity: 1;
+        right: 16px;
+      }
+
+      /* Dropdown toggle (menu utama) */
+      .navbar .nav-link.dropdown-toggle {
+        font-weight: 600;
+        padding-right: 26px;
+        position: relative;
+      }
+
+      /* Icon panah ke atas (seperti contoh gambar) */
+      .navbar .nav-link.dropdown-toggle::after {
+        border: none;
+        content: "▲";
+        font-size: 10px;
+        position: absolute;
+        right: 0;
+        top: 45%;
+        transform: translateY(-50%) rotate(180deg); /* default arah bawah */
+        transition: 0.2s;
+      }
+
+      /* Saat dropdown terbuka → panah ke atas */
+      .navbar .show .nav-link.dropdown-toggle::after {
+        transform: translateY(-50%) rotate(0deg);
+      }
+
+      /* Animasi yang lebih smooth */
+      [data-aos] {
+        pointer-events: none;
+      }
+      [data-aos].aos-animate {
+        pointer-events: auto;
       }
     </style>
   </head>
@@ -173,8 +362,24 @@
                 >Tentang MAPPI</a
               >
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Sejarah MAPPI</a></li>
+                <li><a class="dropdown-item" href="#">Organisasi</a></li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Dewan Pimpinan Nasional (DPN)</a
+                  >
+                </li>
+                <li><a class="dropdown-item" href="#">Dewan Penilai</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Dewan Pengawas Keuangan</a>
+                </li>
+                <li><a class="dropdown-item" href="#">Pengurus Pusat</a></li>
+                <li><a class="dropdown-item" href="#">DPD MAPPI</a></li>
+                <li><a class="dropdown-item" href="#">Profil</a></li>
+                <li><a class="dropdown-item" href="#">Visi dan Misi</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Jenjang Keanggotaan</a>
+                </li>
               </ul>
             </li>
 
@@ -186,8 +391,35 @@
                 >Peraturan & Standard</a
               >
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">AD & ART</a></li>
+                <li><a class="dropdown-item" href="#">Standard Fee</a></li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Kode Etik & Standar Penilaian Indonesia (SPI)</a
+                  >
+                </li>
+                <li><a class="dropdown-item" href="#">Peraturan OJK</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Peraturan Bank Indonesia</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >JUKNIS SPI-201 Edisi VI 2015</a
+                  >
+                </li>
+                <li><a class="dropdown-item" href="#">PMK 101/2014</a></li>
+                <li><a class="dropdown-item" href="#">PMK 56/2017</a></li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Peraturan Organisasi (PO)</a
+                  >
+                </li>
+                <li><a class="dropdown-item" href="#">Pedoman Kerja DPK</a></li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Pedoman Kerja dan Penangan Kasus</a
+                  >
+                </li>
               </ul>
             </li>
 
@@ -199,8 +431,15 @@
                 >Berita & Pustaka</a
               >
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="./blog.html">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="./blog.html">Berita Terkini</a>
+                </li>
+                <li><a class="dropdown-item" href="#">Kegiatan MAPPI</a></li>
+                <li><a class="dropdown-item" href="#">Photo Gallery</a></li>
+                <li><a class="dropdown-item" href="#">Buku</a></li>
+                <li><a class="dropdown-item" href="#">E-Directory</a></li>
+                <li><a class="dropdown-item" href="#">Laporan</a></li>
+                <li><a class="dropdown-item" href="#">E-Magazine</a></li>
               </ul>
             </li>
 
@@ -212,8 +451,22 @@
                 >Pendidikan</a
               >
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="./blog.html"
+                    >Jenjang Pendidikan</a
+                  >
+                </li>
+                <li><a class="dropdown-item" href="#">Designasi</a></li>
+                <li><a class="dropdown-item" href="#">Non Designasi</a></li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Form Pendaftaran Pendidikan</a
+                  >
+                </li>
+                <li><a class="dropdown-item" href="#">Jadwal Kegiatan</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">MAPPI Learning Center</a>
+                </li>
               </ul>
             </li>
 
@@ -225,8 +478,18 @@
                 >Sertifikasi</a
               >
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="./blog.html">Prosedur</a>
+                </li>
+                <li><a class="dropdown-item" href="#">Jadwal Ujian</a></li>
+                <li><a class="dropdown-item" href="#">Komite Uji</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Buku Panduan</a>
+                </li>
+                <li><a class="dropdown-item" href="#">Bentuk Ujian</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Form Pendaftaran Ujian</a>
+                </li>
               </ul>
             </li>
 
@@ -238,8 +501,8 @@
                 >Hubungi Kami</a
               >
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Kantor Pusat</a></li>
+                <li><a class="dropdown-item" href="#">Kantor DPD</a></li>
               </ul>
             </li>
 
@@ -261,7 +524,7 @@
     <section id="jumbroton">
       <div class="container pt-3 pb-5">
         <!-- Jumbotron -->
-        <div class="card border-0 rounded-0" data-aos="fade-up" duration="200">
+        <div class="card border-0 rounded-0" data-aos="fade-up" data-aos-duration="800">
           <img
             src="/assets/images/bg-header.png"
             class="card-img rounded-0"
@@ -288,7 +551,7 @@
           class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-3 list-card"
         >
           <!-- Card 1 -->
-          <div class="col" data-aos="fade-up" duration="300">
+          <div class="col" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
             <div class="card border-0 border-bottom-blue h-100 card-gradient">
               <div
                 class="card-body d-flex flex-column justify-content-center align-items-center text-center py-4"
@@ -302,7 +565,7 @@
           </div>
 
           <!-- Card 2 -->
-          <div class="col" data-aos="fade-up" duration="350">
+          <div class="col" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
             <div class="card border-0 border-bottom-blue h-100 card-gradient">
               <div
                 class="card-body d-flex flex-column justify-content-center align-items-center text-center py-4"
@@ -316,7 +579,7 @@
           </div>
 
           <!-- Card 3 -->
-          <div class="col" data-aos="fade-up" duration="400">
+          <div class="col" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
             <div class="card border-0 border-bottom-blue h-100 card-gradient">
               <div
                 class="card-body d-flex flex-column justify-content-center align-items-center text-center py-4"
@@ -330,7 +593,7 @@
           </div>
 
           <!-- Card 4 -->
-          <div class="col" data-aos="fade-up" duration="450">
+          <div class="col" data-aos="fade-up" data-aos-duration="600" data-aos-delay="250">
             <div class="card border-0 border-bottom-blue h-100 card-gradient">
               <div
                 class="card-body d-flex flex-column justify-content-center align-items-center text-center py-4"
@@ -344,7 +607,7 @@
           </div>
 
           <!-- Card 5 -->
-          <div class="col" data-aos="fade-up" duration="500">
+          <div class="col" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
             <div class="card border-0 border-bottom-blue h-100 card-gradient">
               <div
                 class="card-body d-flex flex-column justify-content-center align-items-center text-center py-4"
@@ -361,27 +624,27 @@
     </section>
 
     <!-- Partner Section -->
-    <section class="partner py-5" data-aos="fade-up" duration="550">
+    <section class="partner py-5" data-aos="fade-up" data-aos-duration="700">
       <div class="container">
         <div
           class="d-flex flex-wrap justify-content-between align-items-center gap-4"
         >
-          <div class="partner-item">
+          <div class="partner-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="100">
             <img src="/assets/images/kpspi.png" alt="KPSI" class="img-fluid" />
           </div>
-          <div class="partner-item">
+          <div class="partner-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="150">
             <img src="/assets/images/kppi.png" alt="KPPI" class="img-fluid" />
           </div>
-          <div class="partner-item">
+          <div class="partner-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
             <img src="/assets/images/kusp.png" alt="KUSP" class="img-fluid" />
           </div>
-          <div class="partner-item">
+          <div class="partner-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="250">
             <img src="/assets/images/fppm.png" alt="FPPM" class="img-fluid" />
           </div>
-          <div class="partner-item">
+          <div class="partner-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="300">
             <img src="/assets/images/ikjp.png" alt="IKJPP" class="img-fluid" />
           </div>
-          <div class="partner-item">
+          <div class="partner-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="350">
             <img
               src="/assets/images/dewan.png"
               alt="Dewan Penilai"
@@ -395,10 +658,10 @@
     <!-- Pengumuman Terbaru -->
     <section id="announcements" class="py-5">
       <div class="container">
-        <h2 class="text-center announcement-heading">Pengumuman Terbaru</h2>
+        <h2 class="text-center announcement-heading" data-aos="fade-up" data-aos-duration="600">Pengumuman Terbaru</h2>
 
         <!-- Carousel -->
-        <div class="announcement-carousel position-relative my-4">
+        <div class="announcement-carousel position-relative my-4" data-aos="fade-up" data-aos-duration="700">
           <button class="carousel-btn btn-prev" aria-label="Previous">
             <i class="bi bi-chevron-left"></i>
           </button>
@@ -427,13 +690,13 @@
         </div>
 
         <!-- Social Cards -->
-        <p class="text-center lead fw-semibold social-intro">
+        <p class="text-center lead fw-semibold social-intro" data-aos="fade-up" data-aos-duration="600">
           Kunjungi official <strong>social media MAPPI</strong> untuk dapatkan
           update terbaru setiap harinya!
         </p>
 
         <div class="d-flex justify-content-center gap-4 mt-4 social-cards-wrap">
-          <div class="social-card text-center">
+          <div class="social-card text-center" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="100">
             <a
               href="https://www.instagram.com/mappi_info?igsh=MWJta2FrbjJnam1vOQ=="
               target="_blank"
@@ -446,14 +709,14 @@
             </a>
           </div>
 
-          <div class="social-card text-center">
+          <div class="social-card text-center" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="150">
             <div class="social-card-icon">
               <i class="bi bi-linkedin" aria-hidden="true"></i>
             </div>
             <small class="d-block mt-2">Linkedin</small>
           </div>
 
-          <div class="social-card text-center">
+          <div class="social-card text-center" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
             <a
               href="https://youtube.com/@mappiofficial7167?si=a6k_u-XRrdxX2vPv"
               target="_blank"
@@ -475,10 +738,16 @@
         <div
           class="section-title-wrapper mb-5 d-flex align-items-center justify-content-between flex-wrap flex-md-nowrap gap-3"
         >
-          <h3 data-aos="fade-up" duration="600">Berita MAPPI</h3>
+          <h3 data-aos="fade-up" data-aos-duration="600">Berita MAPPI</h3>
           <div class="section-divider"></div>
           <!-- garis -->
-          <a class="btn btn-outline-light rounded-pill" href="#" data-aos="fade-up" duration="650">
+          <a
+            class="btn btn-outline-light rounded-pill"
+            href="#"
+            data-aos="fade-up" 
+            data-aos-duration="600"
+            data-aos-delay="100"
+          >
             Berita lainnya
             <i class="bi bi-box-arrow-up-right ms-2"></i>
           </a>
@@ -486,7 +755,7 @@
 
         <div class="row g-4 mb-4">
           <div class="col-md-6">
-            <div class="news-item d-flex align-items-start mb-3">
+            <div class="news-item d-flex align-items-start mb-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
               <div class="news-number me-3">1</div>
               <div>
                 <h6 class="fw-bold mb-1">
@@ -502,7 +771,7 @@
               </div>
             </div>
 
-            <div class="news-item d-flex align-items-start mb-3">
+            <div class="news-item d-flex align-items-start mb-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
               <div class="news-number me-3">2</div>
               <div>
                 <h6 class="fw-bold mb-1">
@@ -518,7 +787,7 @@
               </div>
             </div>
 
-            <div class="news-item d-flex align-items-start mb-3">
+            <div class="news-item d-flex align-items-start mb-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
               <div class="news-number me-3">3</div>
               <div>
                 <h6 class="fw-bold mb-1">
@@ -536,7 +805,7 @@
           </div>
 
           <div class="col-md-6">
-            <div class="news-item d-flex align-items-start mb-3">
+            <div class="news-item d-flex align-items-start mb-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="250">
               <div class="news-number me-3">4</div>
               <div>
                 <h6 class="fw-bold mb-1">
@@ -552,7 +821,7 @@
               </div>
             </div>
 
-            <div class="news-item d-flex align-items-start mb-3">
+            <div class="news-item d-flex align-items-start mb-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
               <div class="news-number me-3">5</div>
               <div>
                 <h6 class="fw-bold mb-1">
@@ -568,7 +837,7 @@
               </div>
             </div>
 
-            <div class="news-item d-flex align-items-start mb-3">
+            <div class="news-item d-flex align-items-start mb-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="350">
               <div class="news-number me-3">6</div>
               <div>
                 <h6 class="fw-bold mb-1">
@@ -632,6 +901,8 @@
         <div
           class="media-card rounded-4 p-4 d-flex flex-column justify-content-center align-items-center"
           style="height: 20px"
+          data-aos="fade-up"
+          data-aos-duration="700"
         >
           <h3 class="text-center mb-5 fw-bold text-primary-mappi">
             Media Partner
@@ -642,19 +913,19 @@
             </button>
             <div class="media-track-wrapper flex-grow-1">
               <div class="media-track d-flex align-items-center gap-5">
-                <div class="media-slide">
+                <div class="media-slide" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="100">
                   <img src="./img/bloomberg.png" alt="Bloomberg" />
                 </div>
-                <div class="media-slide">
+                <div class="media-slide" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="150">
                   <img src="./img/cbv.png" alt="CBV" />
                 </div>
-                <div class="media-slide">
+                <div class="media-slide" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
                   <img src="./img/cfa.png" alt="CFA" />
                 </div>
-                <div class="media-slide">
+                <div class="media-slide" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="250">
                   <img src="./img/dbs.png" alt="DBS" />
                 </div>
-                <div class="media-slide">
+                <div class="media-slide" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="300">
                   <img src="./img/part.png" alt="PART" />
                 </div>
               </div>
@@ -670,44 +941,44 @@
     <!-- Split Card: Riset & Pengembangan | Pendaftaran Online -->
     <section id="services" class="py-5">
       <div class="container">
-        <div class="split-card rounded-4 overflow-hidden shadow-sm">
+        <div class="split-card rounded-4 overflow-hidden shadow-sm" data-aos="fade-up" data-aos-duration="800">
           <div class="row g-0">
             <!-- Left Column -->
             <div class="col-md-6 left-side p-5">
-              <h3 class="mb-4 text-white fw-bold">Riset & Pengembangan</h3>
+              <h3 class="mb-4 text-white fw-bold" data-aos="fade-right" data-aos-duration="600">Riset & Pengembangan</h3>
 
               <ul class="list-unstyled">
-                <li class="d-flex align-items-center mb-3">
+                <li class="d-flex align-items-center mb-3" data-aos="fade-right" data-aos-duration="600" data-aos-delay="100">
                   <span class="icon-circle bg-white text-primary me-3"
                     ><i class="bi bi-currency-dollar"></i
                   ></span>
                   <div class="text-white">Biaya Teknis Bangunana (BTB)</div>
                 </li>
-                <li class="d-flex align-items-center mb-3">
+                <li class="d-flex align-items-center mb-3" data-aos="fade-right" data-aos-duration="600" data-aos-delay="150">
                   <span class="icon-circle bg-white text-primary me-3"
                     ><i class="bi bi-bar-chart-line"></i
                   ></span>
                   <div class="text-white">Beta Saham</div>
                 </li>
-                <li class="d-flex align-items-center mb-3">
+                <li class="d-flex align-items-center mb-3" data-aos="fade-right" data-aos-duration="600" data-aos-delay="200">
                   <span class="icon-circle bg-white text-primary me-3"
                     ><i class="bi bi-shop"></i
                   ></span>
                   <div class="text-white">Pasar Properti Komersial</div>
                 </li>
-                <li class="d-flex align-items-center mb-3">
+                <li class="d-flex align-items-center mb-3" data-aos="fade-right" data-aos-duration="600" data-aos-delay="250">
                   <span class="icon-circle bg-white text-primary me-3"
                     ><i class="bi bi-tag"></i
                   ></span>
                   <div class="text-white">Harga Komoditas</div>
                 </li>
-                <li class="d-flex align-items-center mb-3">
+                <li class="d-flex align-items-center mb-3" data-aos="fade-right" data-aos-duration="600" data-aos-delay="300">
                   <span class="icon-circle bg-white text-primary me-3"
                     ><i class="bi bi-house-fill"></i
                   ></span>
                   <div class="text-white">Pasar Properti Residental</div>
                 </li>
-                <li class="d-flex align-items-center">
+                <li class="d-flex align-items-center" data-aos="fade-right" data-aos-duration="600" data-aos-delay="350">
                   <span class="icon-circle bg-white text-primary me-3"
                     ><i class="bi bi-journal-text"></i
                   ></span>
@@ -723,16 +994,18 @@
                 alt="thumbnail"
                 class="img-fluid rounded-3 mb-4"
                 style="max-height: 280px; object-fit: cover"
+                data-aos="zoom-in"
+                data-aos-duration="600"
               />
-              <h4 class="fw-bold text-dark mb-3">Pendaftaran Online</h4>
-              <p class="text-muted mb-4">
+              <h4 class="fw-bold text-dark mb-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">Pendaftaran Online</h4>
+              <p class="text-muted mb-4" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
                 Pendaftaran Pendidikan MAPPI dilakukan melalui Website MAPPI.
                 Anggota MAPPI yang dapat mengikuti pendidikan MAPPI adalah
                 Anggota MAPPI yang telah memenuhi ketentuan persyaratan
                 pendidikan dan telah melakukan pembayaran Iuran Tahunan Anggota
                 sampai dengan Tahun ini.
               </p>
-              <a class="btn btn-primary rounded-pill px-4 py-2" href="#"
+              <a class="btn btn-primary rounded-pill px-4 py-2" href="#" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200"
                 >Daftar <i class="bi bi-arrow-right ms-2"></i
               ></a>
             </div>
@@ -744,10 +1017,10 @@
     <!-- Jadwal Pendidikan -->
     <section class="schedule-section py-5 mt-3">
       <div class="container py-3">
-        <h2 class="h2 text-primary-mappi text-center fw-bold text-mappi mb-3">
+        <h2 class="h2 text-primary-mappi text-center fw-bold text-mappi mb-3" data-aos="fade-up" data-aos-duration="600">
           Jadwal Pendidikan
         </h2>
-        <ul class="nav justify-content-center schedule-tabs mb-3">
+        <ul class="nav justify-content-center schedule-tabs mb-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
           <li class="nav-item">
             <a class="nav-link active" href="#">Semua</a>
           </li>
@@ -760,7 +1033,7 @@
           <li class="nav-item"><a class="nav-link" href="#">USP</a></li>
         </ul>
         <div class="list-group schedule-list">
-          <div class="list-group-item py-3">
+          <div class="list-group-item py-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
             <div class="row g-3 align-items-start">
               <div class="col-12 col-md-9">
                 <div class="fw-semibold mb-2">
@@ -782,7 +1055,7 @@
               </div>
             </div>
           </div>
-          <div class="list-group-item py-3">
+          <div class="list-group-item py-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
             <div class="row g-3 align-items-start">
               <div class="col-12 col-md-9">
                 <div class="fw-semibold mb-2">
@@ -806,7 +1079,7 @@
               </div>
             </div>
           </div>
-          <div class="list-group-item py-3">
+          <div class="list-group-item py-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="250">
             <div class="row g-3 align-items-start">
               <div class="col-12 col-md-9">
                 <div class="fw-semibold mb-2">
@@ -828,7 +1101,7 @@
               </div>
             </div>
           </div>
-          <div class="list-group-item py-3">
+          <div class="list-group-item py-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
             <div class="row g-3 align-items-start">
               <div class="col-12 col-md-9">
                 <div class="fw-semibold mb-2">
@@ -859,13 +1132,13 @@
     <!-- Info Lainnya -->
     <section id="info-lainnya" class="py-5">
       <div class="container">
-        <h2 class="text-center text-primary-mappi fw-bold mb-4">
+        <h2 class="text-center text-primary-mappi fw-bold mb-4" data-aos="fade-up" data-aos-duration="600">
           Info lainnya
         </h2>
 
         <div class="py-4 rounded-4">
           <div class="row g-4">
-            <div class="col-6 col-md-3">
+            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
               <div class="info-card rounded-3 overflow-hidden">
                 <div class="card-thumb">
                   <img src="/img/info1.png" class="w-100" alt="Info 2" />
@@ -877,7 +1150,7 @@
               </div>
             </div>
 
-            <div class="col-6 col-md-3">
+            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
               <div class="info-card rounded-3 overflow-hidden">
                 <div class="card-thumb">
                   <img src="/img/info2.png" class="w-100" alt="Info 2" />
@@ -888,7 +1161,7 @@
               </div>
             </div>
 
-            <div class="col-6 col-md-3">
+            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
               <div class="info-card rounded-3 overflow-hidden">
                 <div class="card-thumb">
                   <img src="/img/info3.png" class="w-100" alt="Info 3" />
@@ -899,7 +1172,7 @@
               </div>
             </div>
 
-            <div class="col-6 col-md-3">
+            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="250">
               <div class="info-card rounded-3 overflow-hidden">
                 <div class="card-thumb">
                   <img src="/img/info4.png" class="w-100" alt="Info 4" />
@@ -918,34 +1191,34 @@
     <!-- Link Terkait -->
     <section id="link-terkait" class="py-3">
       <div class="container">
-        <h2 class="text-center text-primary-mappi fw-bold mb-4">
+        <h2 class="text-center text-primary-mappi fw-bold mb-4" data-aos="fade-up" data-aos-duration="600">
           Link Terkait
         </h2>
         <div
           class="d-flex flex-wrap justify-content-between align-items-center link-logos gap-2"
         >
-          <div class="logo-item">
+          <div class="logo-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="100">
             <img
               src="/img/link55-removebg-preview.png"
               alt="DBS"
               loading="lazy"
             />
           </div>
-          <div class="logo-item">
+          <div class="logo-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="150">
             <img
               src="/img/link66-removebg-preview.png"
               alt="MAPPI"
               loading="lazy"
             />
           </div>
-          <div class="logo-item">
+          <div class="logo-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
             <img
               src="/img/link77-removebg-preview.png"
               alt="MAPPI"
               loading="lazy"
             />
           </div>
-          <div class="logo-item">
+          <div class="logo-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="250">
             <img
               src="/img/link88-removebg-preview.png"
               alt="MAPPI"
@@ -953,24 +1226,24 @@
             />
           </div>
 
-          <div class="logo-item">
+          <div class="logo-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="300">
             <img src="/img/link1.png" alt="CBV" loading="lazy" />
           </div>
-          <div class="logo-item">
+          <div class="logo-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="350">
             <img
               src="/img/link22-removebg-preview.png"
               alt="CA"
               loading="lazy"
             />
           </div>
-          <div class="logo-item">
+          <div class="logo-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="400">
             <img
               src="/img/link33-removebg-preview.png"
               alt="CFA"
               loading="lazy"
             />
           </div>
-          <div class="logo-item">
+          <div class="logo-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="450">
             <img
               src="/img/link44-removebg-preview.png"
               alt="Bloomberg"
@@ -984,7 +1257,7 @@
     <footer class="footer-extended bg-primary-mappi text-white pt-5 pb-4">
       <div class="container">
         <div class="row gy-4">
-          <div class="col-12 col-lg-3">
+          <div class="col-12 col-lg-3" data-aos="fade-up" data-aos-duration="600">
             <div class="d-flex align-items-center gap-2 mb-3">
               <img style="width: 50px" src="img/images (1).png" alt="logo" />
               <!-- <i class="bi-shield-check fs-3"></i> -->
@@ -1035,7 +1308,7 @@
             </div>
           </div>
 
-          <div class="col-12 col-lg-3">
+          <div class="col-12 col-lg-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
             <div class="d-flex align-items-center gap-2 mb-3">
               <i class="bi-grid-3x3-gap-fill fs-5"></i>
               <span class="fw-semibold">Menu</span>
@@ -1061,7 +1334,7 @@
             </div>
           </div>
 
-          <div class="col-12 col-lg-3">
+          <div class="col-12 col-lg-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
             <div class="d-flex align-items-center gap-2 mb-3">
               <i class="bi-journal-bookmark fs-5"></i>
               <span class="fw-semibold">Pendidikan & Sertifikasi</span>
@@ -1089,7 +1362,7 @@
             </ul>
           </div>
 
-          <div class="col-12 col-lg-3">
+          <div class="col-12 col-lg-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
             <div class="d-flex align-items-center gap-2 mb-3">
               <i class="bi-layout-text-sidebar-reverse fs-5"></i>
               <span class="fw-semibold">Lainnya</span>
@@ -1124,7 +1397,14 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      AOS.init();
+      // Inisialisasi AOS dengan konfigurasi yang lebih smooth
+      AOS.init({
+        duration: 600,
+        easing: 'ease-out-cubic',
+        once: true,
+        offset: 50,
+        delay: 0
+      });
     </script>
     <script src="/script.js"></script>
     <!-- Back to Top Button -->
