@@ -133,6 +133,139 @@
         box-shadow: none;
         border-color: #010b69;
       }
+
+      /* Dropdown wrapper */
+      .navbar .dropdown-menu {
+        background: #002b7f; /* biru gelap */
+        border: none;
+        border-radius: 18px;
+        padding: 12px 0;
+        min-width: 250px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        margin-top: 15px; /* jarak dropdown dari menu */
+      }
+
+      /* Dropdown item */
+      .navbar .dropdown-item {
+        color: #fff;
+        padding: 10px 20px;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        position: relative;
+      }
+
+      /* Hover item */
+      .navbar .dropdown-item:hover {
+        background: rgba(255, 255, 255, 0.15);
+        color: #fff;
+      }
+
+      /* Icon “>” di kanan untuk item yang punya sub */
+      .navbar .dropdown-item::after {
+        content: "›"; /* panah */
+        position: absolute;
+        right: 20px;
+        opacity: 0.5;
+        transition: all 0.2s ease;
+      }
+
+      /* Panah saat hover */
+      .navbar .dropdown-item:hover::after {
+        opacity: 1;
+        right: 16px;
+      }
+
+      /* Dropdown toggle (menu utama) */
+      .navbar .nav-link.dropdown-toggle {
+        font-weight: 600;
+        padding-right: 26px;
+        position: relative;
+      }
+
+      /* Icon panah ke atas (seperti contoh gambar) */
+      .navbar .nav-link.dropdown-toggle::after {
+        border: none;
+        content: "▲";
+        font-size: 10px;
+        position: absolute;
+        right: 0;
+        top: 45%;
+        transform: translateY(-50%) rotate(180deg); /* default arah bawah */
+        transition: 0.2s;
+      }
+
+      /* Saat dropdown terbuka → panah ke atas */
+      .navbar .show .nav-link.dropdown-toggle::after {
+        transform: translateY(-50%) rotate(0deg);
+      }
+
+      /* Animasi yang lebih smooth */
+      [data-aos] {
+        pointer-events: none;
+      }
+      [data-aos].aos-animate {
+        pointer-events: auto;
+      }
+
+      /* Text berubah biru saat hover */
+      .left-side ul li:hover div {
+        color: #0041a2 !important;
+      }
+
+      .info-card {
+        background: #ffffff;
+        border: 1px solid #e5e5e5;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      /* Thumbnail */
+      .info-card .card-thumb img {
+        transition: all 0.3s ease;
+      }
+
+      /* Hover Effect */
+      .info-card:hover {
+        background: #0041a2; /* Biru */
+        transform: translateY(-6px);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Image gelap saat hover */
+      .info-card:hover .card-thumb img {
+        filter: brightness(0.7);
+      }
+
+      /* Teks putih saat hover */
+      .info-card:hover .card-caption strong,
+      .info-card:hover .card-caption .small {
+        color: #fff !important;
+      }
+
+      .tile {
+        background: #f8f9fa;
+        border: 1px solid #e6e6e6;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      /* Hover */
+      .tile:hover {
+        background: #0d6efd; /* Biru */
+        color: #fff;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12);
+      }
+
+      /* Icon jadi putih */
+      .tile:hover i {
+        color: #fff !important;
+      }
+
+      /* Teks jadi putih */
+      .tile:hover .fw-semibold {
+        color: #fff !important;
+      }
     </style>
   </head>
 
@@ -189,11 +322,7 @@
       <div class="container">
         <!-- Logo -->
         <a class="navbar-brand" href="#">
-          <img
-            src="/assets/images/logo_with_text.png"
-            width="218"
-            alt="logo"
-          />
+          <img src="/assets/images/logo_with_text.png" width="218" alt="logo" />
         </a>
 
         <!-- Toggler -->
@@ -222,8 +351,24 @@
                 >Tentang MAPPI</a
               >
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Sejarah MAPPI</a></li>
+                <li><a class="dropdown-item" href="#">Organisasi</a></li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Dewan Pimpinan Nasional (DPN)</a
+                  >
+                </li>
+                <li><a class="dropdown-item" href="#">Dewan Penilai</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Dewan Pengawas Keuangan</a>
+                </li>
+                <li><a class="dropdown-item" href="#">Pengurus Pusat</a></li>
+                <li><a class="dropdown-item" href="#">DPD MAPPI</a></li>
+                <li><a class="dropdown-item" href="#">Profil</a></li>
+                <li><a class="dropdown-item" href="#">Visi dan Misi</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Jenjang Keanggotaan</a>
+                </li>
               </ul>
             </li>
 
@@ -235,8 +380,35 @@
                 >Peraturan & Standard</a
               >
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">AD & ART</a></li>
+                <li><a class="dropdown-item" href="#">Standard Fee</a></li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Kode Etik & Standar Penilaian Indonesia (SPI)</a
+                  >
+                </li>
+                <li><a class="dropdown-item" href="#">Peraturan OJK</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Peraturan Bank Indonesia</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >JUKNIS SPI-201 Edisi VI 2015</a
+                  >
+                </li>
+                <li><a class="dropdown-item" href="#">PMK 101/2014</a></li>
+                <li><a class="dropdown-item" href="#">PMK 56/2017</a></li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Peraturan Organisasi (PO)</a
+                  >
+                </li>
+                <li><a class="dropdown-item" href="#">Pedoman Kerja DPK</a></li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Pedoman Kerja dan Penangan Kasus</a
+                  >
+                </li>
               </ul>
             </li>
 
@@ -249,9 +421,14 @@
               >
               <ul class="dropdown-menu">
                 <li>
-                  <a class="dropdown-item" href="./blog.html">Action</a>
+                  <a class="dropdown-item" href="./blog.html">Berita Terkini</a>
                 </li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Kegiatan MAPPI</a></li>
+                <li><a class="dropdown-item" href="#">Photo Gallery</a></li>
+                <li><a class="dropdown-item" href="#">Buku</a></li>
+                <li><a class="dropdown-item" href="#">E-Directory</a></li>
+                <li><a class="dropdown-item" href="#">Laporan</a></li>
+                <li><a class="dropdown-item" href="#">E-Magazine</a></li>
               </ul>
             </li>
 
@@ -263,8 +440,22 @@
                 >Pendidikan</a
               >
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="./blog.html"
+                    >Jenjang Pendidikan</a
+                  >
+                </li>
+                <li><a class="dropdown-item" href="#">Designasi</a></li>
+                <li><a class="dropdown-item" href="#">Non Designasi</a></li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Form Pendaftaran Pendidikan</a
+                  >
+                </li>
+                <li><a class="dropdown-item" href="#">Jadwal Kegiatan</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">MAPPI Learning Center</a>
+                </li>
               </ul>
             </li>
 
@@ -276,8 +467,18 @@
                 >Sertifikasi</a
               >
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="./blog.html">Prosedur</a>
+                </li>
+                <li><a class="dropdown-item" href="#">Jadwal Ujian</a></li>
+                <li><a class="dropdown-item" href="#">Komite Uji</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Buku Panduan</a>
+                </li>
+                <li><a class="dropdown-item" href="#">Bentuk Ujian</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Form Pendaftaran Ujian</a>
+                </li>
               </ul>
             </li>
 
@@ -289,8 +490,8 @@
                 >Hubungi Kami</a
               >
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Kantor Pusat</a></li>
+                <li><a class="dropdown-item" href="#">Kantor DPD</a></li>
               </ul>
             </li>
 
