@@ -93,6 +93,20 @@
         ); /* semi-transparan agar kontras */
       }
 
+      .social-card-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+      }
+
+      .social-card-icon {
+        font-size: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
       .social-card {
         transition: all 0.3s ease;
         cursor: pointer;
@@ -124,12 +138,6 @@
         color: #0041a2; /* teks jadi biru */
       }
 
-      /* Jika ingin teksnya ikut jadi putih saat hover card */
-      .social-card:hover a small,
-      .social-card:hover small {
-        color: #fff !important;
-      }
-
       /* Style dasar setiap list item */
       .left-side ul li {
         padding: 10px 12px;
@@ -143,28 +151,35 @@
         cursor: pointer;
       }
 
-      /* Icon berubah biru saat hover */
-
-      /* Text berubah biru saat hover */
       .left-side ul li:hover div {
         color: #0041a2 !important;
       }
 
       .info-card {
-        background: #ffffff;
+        background: #eaf2ff;
         border: 1px solid #e5e5e5;
         transition: all 0.3s ease;
         cursor: pointer;
+        min-height: 320px;
+        display: flex;
+        flex-direction: column;
       }
 
-      /* Thumbnail */
       .info-card .card-thumb img {
         transition: all 0.3s ease;
+        height: 180px;
+        object-fit: cover;
+        width: 100%;
       }
 
-      /* Hover Effect */
+      /* Caption diarahkan ke bawah */
+      .info-card .card-caption {
+        margin-top: auto;
+      }
+
+      /* Hover */
       .info-card:hover {
-        background: #0041a2; /* Biru */
+        background: #0041a2;
         transform: translateY(-6px);
         box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
       }
@@ -282,7 +297,7 @@
 
   <body>
     <!-- TOPBAR FIXED -->
-    <div class="fixed-top bg-white shadow-sm">
+    <div class="fixed-top shadow-sm" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #e9ecef 100%);">
       <div class="container py-2 py-md-3 d-flex align-items-center">
         <!-- Search (mobile & desktop) -->
         <div class="me-auto" style="max-width: 450px; width: 100%">
@@ -524,7 +539,11 @@
     <section id="jumbroton">
       <div class="container pt-3 pb-5">
         <!-- Jumbotron -->
-        <div class="card border-0 rounded-0" data-aos="fade-up" data-aos-duration="800">
+        <div
+          class="card border-0 rounded-0"
+          data-aos="fade-up"
+          data-aos-duration="800"
+        >
           <img
             src="/assets/images/bg-header.png"
             class="card-img rounded-0"
@@ -551,12 +570,23 @@
           class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-3 list-card"
         >
           <!-- Card 1 -->
-          <div class="col" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+          <div
+            class="col"
+            data-aos="fade-up"
+            data-aos-duration="600"
+            data-aos-delay="100"
+          >
             <div class="card border-0 border-bottom-blue h-100 card-gradient">
               <div
                 class="card-body d-flex flex-column justify-content-center align-items-center text-center py-4"
               >
-                <img src="/assets/images/logo_1.png" alt="icon" class="mb-3" />
+                <img
+                  src="/assets/images/logo_1.png"
+                  data-hover="/assets/images/logo_1.1.png"
+                  alt="icon"
+                  class="mb-3 hover-img"
+                />
+
                 <h6 class="card-title mb-0 fw-bold gradient-text">
                   Berita MAPPI
                 </h6>
@@ -565,12 +595,22 @@
           </div>
 
           <!-- Card 2 -->
-          <div class="col" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
+          <div
+            class="col"
+            data-aos="fade-up"
+            data-aos-duration="600"
+            data-aos-delay="150"
+          >
             <div class="card border-0 border-bottom-blue h-100 card-gradient">
               <div
                 class="card-body d-flex flex-column justify-content-center align-items-center text-center py-4"
               >
-                <img src="/assets/images/logo_2.png" alt="icon" class="mb-3" />
+                <img
+                  src="/assets/images/logo_2.png"
+                  data-hover="/assets/images/logo_2.2.png"
+                  alt="icon"
+                  class="mb-3 hover-img"
+                />
                 <h6 class="card-title mb-0 fw-bold gradient-text">
                   Riset & Pengembangan
                 </h6>
@@ -579,12 +619,22 @@
           </div>
 
           <!-- Card 3 -->
-          <div class="col" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+          <div
+            class="col"
+            data-aos="fade-up"
+            data-aos-duration="600"
+            data-aos-delay="200"
+          >
             <div class="card border-0 border-bottom-blue h-100 card-gradient">
               <div
                 class="card-body d-flex flex-column justify-content-center align-items-center text-center py-4"
               >
-                <img src="/assets/images/logo_3.png" alt="icon" class="mb-3" />
+                <img
+                  src="/assets/images/logo_3.png"
+                  data-hover="/assets/images/logo_3.3.png"
+                  alt="icon"
+                  class="mb-3 hover-img"
+                />
                 <h6 class="card-title mb-0 fw-bold gradient-text">
                   Jadwal Pendidikan
                 </h6>
@@ -593,12 +643,22 @@
           </div>
 
           <!-- Card 4 -->
-          <div class="col" data-aos="fade-up" data-aos-duration="600" data-aos-delay="250">
+          <div
+            class="col"
+            data-aos="fade-up"
+            data-aos-duration="600"
+            data-aos-delay="250"
+          >
             <div class="card border-0 border-bottom-blue h-100 card-gradient">
               <div
                 class="card-body d-flex flex-column justify-content-center align-items-center text-center py-4"
               >
-                <img src="/assets/images/logo_4.png" alt="icon" class="mb-3" />
+                <img
+                  src="/assets/images/logo_4.png"
+                  data-hover="/assets/images/logo_4.4.png"
+                  alt="icon"
+                  class="mb-3 hover-img"
+                />
                 <h6 class="card-title mb-0 fw-bold gradient-text">
                   Pendaftaran Online
                 </h6>
@@ -607,12 +667,22 @@
           </div>
 
           <!-- Card 5 -->
-          <div class="col" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+          <div
+            class="col"
+            data-aos="fade-up"
+            data-aos-duration="600"
+            data-aos-delay="300"
+          >
             <div class="card border-0 border-bottom-blue h-100 card-gradient">
               <div
                 class="card-body d-flex flex-column justify-content-center align-items-center text-center py-4"
               >
-                <img src="/assets/images/logo_5.png" alt="icon" class="mb-3" />
+                <img
+                  src="/assets/images/logo_5.png"
+                  data-hover="/assets/images/logo_5.5.png"
+                  alt="icon"
+                  class="mb-3 hover-img"
+                />
                 <h6 class="card-title mb-0 fw-bold gradient-text">
                   E-Commerce
                 </h6>
@@ -629,22 +699,52 @@
         <div
           class="d-flex flex-wrap justify-content-between align-items-center gap-4"
         >
-          <div class="partner-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="100">
+          <div
+            class="partner-item"
+            data-aos="zoom-in"
+            data-aos-duration="600"
+            data-aos-delay="100"
+          >
             <img src="/assets/images/kpspi.png" alt="KPSI" class="img-fluid" />
           </div>
-          <div class="partner-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="150">
+          <div
+            class="partner-item"
+            data-aos="zoom-in"
+            data-aos-duration="600"
+            data-aos-delay="150"
+          >
             <img src="/assets/images/kppi.png" alt="KPPI" class="img-fluid" />
           </div>
-          <div class="partner-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
+          <div
+            class="partner-item"
+            data-aos="zoom-in"
+            data-aos-duration="600"
+            data-aos-delay="200"
+          >
             <img src="/assets/images/kusp.png" alt="KUSP" class="img-fluid" />
           </div>
-          <div class="partner-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="250">
+          <div
+            class="partner-item"
+            data-aos="zoom-in"
+            data-aos-duration="600"
+            data-aos-delay="250"
+          >
             <img src="/assets/images/fppm.png" alt="FPPM" class="img-fluid" />
           </div>
-          <div class="partner-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="300">
+          <div
+            class="partner-item"
+            data-aos="zoom-in"
+            data-aos-duration="600"
+            data-aos-delay="300"
+          >
             <img src="/assets/images/ikjp.png" alt="IKJPP" class="img-fluid" />
           </div>
-          <div class="partner-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="350">
+          <div
+            class="partner-item"
+            data-aos="zoom-in"
+            data-aos-duration="600"
+            data-aos-delay="350"
+          >
             <img
               src="/assets/images/dewan.png"
               alt="Dewan Penilai"
@@ -658,10 +758,20 @@
     <!-- Pengumuman Terbaru -->
     <section id="announcements" class="py-5">
       <div class="container">
-        <h2 class="text-center announcement-heading" data-aos="fade-up" data-aos-duration="600">Pengumuman Terbaru</h2>
+        <h2
+          class="text-center announcement-heading"
+          data-aos="fade-up"
+          data-aos-duration="600"
+        >
+          Pengumuman Terbaru
+        </h2>
 
         <!-- Carousel -->
-        <div class="announcement-carousel position-relative my-4" data-aos="fade-up" data-aos-duration="700">
+        <div
+          class="announcement-carousel position-relative my-4"
+          data-aos="fade-up"
+          data-aos-duration="700"
+        >
           <button class="carousel-btn btn-prev" aria-label="Previous">
             <i class="bi bi-chevron-left"></i>
           </button>
@@ -690,42 +800,65 @@
         </div>
 
         <!-- Social Cards -->
-        <p class="text-center lead fw-semibold social-intro" data-aos="fade-up" data-aos-duration="600">
-          Kunjungi official <strong>social media MAPPI</strong> untuk dapatkan
-          update terbaru setiap harinya!
+        <p
+          class="text-center lead fw-semibold social-intro"
+          data-aos="fade-up"
+          data-aos-duration="600"
+        >
+          Kunjungi official <strong>social media MAPPI</strong><br />untuk
+          dapatkan update terbaru setiap harinya!
         </p>
 
-        <div class="d-flex justify-content-center gap-4 mt-4 social-cards-wrap">
-          <div class="social-card text-center" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="100">
+        <div class="social-cards-wrap d-flex justify-content-center gap-4 mt-4">
+          <div
+            class="social-card text-center"
+            data-aos="zoom-in"
+            data-aos-duration="600"
+            data-aos-delay="100"
+          >
             <a
               href="https://www.instagram.com/mappi_info?igsh=MWJta2FrbjJnam1vOQ=="
               target="_blank"
               rel="noopener noreferrer"
+              class="social-card-content"
             >
               <div class="social-card-icon">
-                <i class="bi bi-instagram" aria-hidden="true"></i>
+                <i class="bi bi-instagram"></i>
               </div>
-              <small class="d-block mt-2">Instagram</small>
+              <small>Instagram</small>
             </a>
           </div>
 
-          <div class="social-card text-center" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="150">
-            <div class="social-card-icon">
-              <i class="bi bi-linkedin" aria-hidden="true"></i>
+          <div
+            class="social-card text-center"
+            data-aos="zoom-in"
+            data-aos-duration="600"
+            data-aos-delay="150"
+          >
+            <div class="social-card-content">
+              <div class="social-card-icon">
+                <i class="bi bi-linkedin"></i>
+              </div>
+              <small>Linkedin</small>
             </div>
-            <small class="d-block mt-2">Linkedin</small>
           </div>
 
-          <div class="social-card text-center" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
+          <div
+            class="social-card text-center"
+            data-aos="zoom-in"
+            data-aos-duration="600"
+            data-aos-delay="200"
+          >
             <a
               href="https://youtube.com/@mappiofficial7167?si=a6k_u-XRrdxX2vPv"
               target="_blank"
               rel="noopener noreferrer"
+              class="social-card-content"
             >
               <div class="social-card-icon">
-                <i class="bi bi-youtube" aria-hidden="true"></i>
+                <i class="bi bi-youtube"></i>
               </div>
-              <small class="d-block mt-2">Youtube</small>
+              <small>Youtube</small>
             </a>
           </div>
         </div>
@@ -744,7 +877,7 @@
           <a
             class="btn btn-outline-light rounded-pill"
             href="#"
-            data-aos="fade-up" 
+            data-aos="fade-up"
             data-aos-duration="600"
             data-aos-delay="100"
           >
@@ -755,7 +888,12 @@
 
         <div class="row g-4 mb-4">
           <div class="col-md-6">
-            <div class="news-item d-flex align-items-start mb-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+            <div
+              class="news-item d-flex align-items-start mb-3"
+              data-aos="fade-up"
+              data-aos-duration="600"
+              data-aos-delay="100"
+            >
               <div class="news-number me-3">1</div>
               <div>
                 <h6 class="fw-bold mb-1">
@@ -771,7 +909,12 @@
               </div>
             </div>
 
-            <div class="news-item d-flex align-items-start mb-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
+            <div
+              class="news-item d-flex align-items-start mb-3"
+              data-aos="fade-up"
+              data-aos-duration="600"
+              data-aos-delay="150"
+            >
               <div class="news-number me-3">2</div>
               <div>
                 <h6 class="fw-bold mb-1">
@@ -787,7 +930,12 @@
               </div>
             </div>
 
-            <div class="news-item d-flex align-items-start mb-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+            <div
+              class="news-item d-flex align-items-start mb-3"
+              data-aos="fade-up"
+              data-aos-duration="600"
+              data-aos-delay="200"
+            >
               <div class="news-number me-3">3</div>
               <div>
                 <h6 class="fw-bold mb-1">
@@ -805,7 +953,12 @@
           </div>
 
           <div class="col-md-6">
-            <div class="news-item d-flex align-items-start mb-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="250">
+            <div
+              class="news-item d-flex align-items-start mb-3"
+              data-aos="fade-up"
+              data-aos-duration="600"
+              data-aos-delay="250"
+            >
               <div class="news-number me-3">4</div>
               <div>
                 <h6 class="fw-bold mb-1">
@@ -821,7 +974,12 @@
               </div>
             </div>
 
-            <div class="news-item d-flex align-items-start mb-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+            <div
+              class="news-item d-flex align-items-start mb-3"
+              data-aos="fade-up"
+              data-aos-duration="600"
+              data-aos-delay="300"
+            >
               <div class="news-number me-3">5</div>
               <div>
                 <h6 class="fw-bold mb-1">
@@ -837,7 +995,12 @@
               </div>
             </div>
 
-            <div class="news-item d-flex align-items-start mb-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="350">
+            <div
+              class="news-item d-flex align-items-start mb-3"
+              data-aos="fade-up"
+              data-aos-duration="600"
+              data-aos-delay="350"
+            >
               <div class="news-number me-3">6</div>
               <div>
                 <h6 class="fw-bold mb-1">
@@ -913,19 +1076,44 @@
             </button>
             <div class="media-track-wrapper flex-grow-1">
               <div class="media-track d-flex align-items-center gap-5">
-                <div class="media-slide" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="100">
+                <div
+                  class="media-slide"
+                  data-aos="zoom-in"
+                  data-aos-duration="600"
+                  data-aos-delay="100"
+                >
                   <img src="./img/bloomberg.png" alt="Bloomberg" />
                 </div>
-                <div class="media-slide" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="150">
+                <div
+                  class="media-slide"
+                  data-aos="zoom-in"
+                  data-aos-duration="600"
+                  data-aos-delay="150"
+                >
                   <img src="./img/cbv.png" alt="CBV" />
                 </div>
-                <div class="media-slide" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
+                <div
+                  class="media-slide"
+                  data-aos="zoom-in"
+                  data-aos-duration="600"
+                  data-aos-delay="200"
+                >
                   <img src="./img/cfa.png" alt="CFA" />
                 </div>
-                <div class="media-slide" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="250">
+                <div
+                  class="media-slide"
+                  data-aos="zoom-in"
+                  data-aos-duration="600"
+                  data-aos-delay="250"
+                >
                   <img src="./img/dbs.png" alt="DBS" />
                 </div>
-                <div class="media-slide" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="300">
+                <div
+                  class="media-slide"
+                  data-aos="zoom-in"
+                  data-aos-duration="600"
+                  data-aos-delay="300"
+                >
                   <img src="./img/part.png" alt="PART" />
                 </div>
               </div>
@@ -938,47 +1126,132 @@
       </div>
     </section>
 
+    <style>
+      /* Split Card Left Column Hover Effect */
+      .left-side ul li {
+        padding: 10px 12px;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+      }
+
+      /* Hover state */
+      .left-side ul li:hover {
+        background: #ffffff; /* Putih */
+        cursor: pointer;
+      }
+
+      /* Icon default (biru) */
+      .left-side ul li .icon-circle {
+        background-color: #ffffff !important; /* Biru */
+        color: #002b7f !important;
+        transition: all 0.3s ease;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Icon saat hover (biru lebih gelap) */
+      .left-side ul li:hover .icon-circle {
+        background-color: #002b7f !important; /* Biru lebih gelap */
+        color: white !important;
+      }
+
+      /* Teks default (putih) */
+      .left-side ul li .text-white {
+        color: white !important;
+        transition: all 0.3s ease;
+      }
+
+      /* Teks saat hover (biru) */
+      .left-side ul li:hover .text-white {
+        color: #0041a2 !important; /* Biru */
+        font-weight: 600;
+      }
+    </style>
+
     <!-- Split Card: Riset & Pengembangan | Pendaftaran Online -->
     <section id="services" class="py-5">
       <div class="container">
-        <div class="split-card rounded-4 overflow-hidden shadow-sm" data-aos="fade-up" data-aos-duration="800">
+        <div
+          class="split-card rounded-4 overflow-hidden shadow-sm"
+          data-aos="fade-up"
+          data-aos-duration="800"
+        >
           <div class="row g-0">
             <!-- Left Column -->
             <div class="col-md-6 left-side p-5">
-              <h3 class="mb-4 text-white fw-bold" data-aos="fade-right" data-aos-duration="600">Riset & Pengembangan</h3>
+              <h3
+                class="mb-4 text-white fw-bold"
+                data-aos="fade-right"
+                data-aos-duration="600"
+              >
+                Riset & Pengembangan
+              </h3>
 
               <ul class="list-unstyled">
-                <li class="d-flex align-items-center mb-3" data-aos="fade-right" data-aos-duration="600" data-aos-delay="100">
+                <li
+                  class="d-flex align-items-center mb-3"
+                  data-aos="fade-right"
+                  data-aos-duration="600"
+                  data-aos-delay="100"
+                >
                   <span class="icon-circle bg-white text-primary me-3"
                     ><i class="bi bi-currency-dollar"></i
                   ></span>
                   <div class="text-white">Biaya Teknis Bangunana (BTB)</div>
                 </li>
-                <li class="d-flex align-items-center mb-3" data-aos="fade-right" data-aos-duration="600" data-aos-delay="150">
+                <li
+                  class="d-flex align-items-center mb-3"
+                  data-aos="fade-right"
+                  data-aos-duration="600"
+                  data-aos-delay="150"
+                >
                   <span class="icon-circle bg-white text-primary me-3"
                     ><i class="bi bi-bar-chart-line"></i
                   ></span>
                   <div class="text-white">Beta Saham</div>
                 </li>
-                <li class="d-flex align-items-center mb-3" data-aos="fade-right" data-aos-duration="600" data-aos-delay="200">
+                <li
+                  class="d-flex align-items-center mb-3"
+                  data-aos="fade-right"
+                  data-aos-duration="600"
+                  data-aos-delay="200"
+                >
                   <span class="icon-circle bg-white text-primary me-3"
                     ><i class="bi bi-shop"></i
                   ></span>
                   <div class="text-white">Pasar Properti Komersial</div>
                 </li>
-                <li class="d-flex align-items-center mb-3" data-aos="fade-right" data-aos-duration="600" data-aos-delay="250">
+                <li
+                  class="d-flex align-items-center mb-3"
+                  data-aos="fade-right"
+                  data-aos-duration="600"
+                  data-aos-delay="250"
+                >
                   <span class="icon-circle bg-white text-primary me-3"
                     ><i class="bi bi-tag"></i
                   ></span>
                   <div class="text-white">Harga Komoditas</div>
                 </li>
-                <li class="d-flex align-items-center mb-3" data-aos="fade-right" data-aos-duration="600" data-aos-delay="300">
+                <li
+                  class="d-flex align-items-center mb-3"
+                  data-aos="fade-right"
+                  data-aos-duration="600"
+                  data-aos-delay="300"
+                >
                   <span class="icon-circle bg-white text-primary me-3"
                     ><i class="bi bi-house-fill"></i
                   ></span>
                   <div class="text-white">Pasar Properti Residental</div>
                 </li>
-                <li class="d-flex align-items-center" data-aos="fade-right" data-aos-duration="600" data-aos-delay="350">
+                <li
+                  class="d-flex align-items-center"
+                  data-aos="fade-right"
+                  data-aos-duration="600"
+                  data-aos-delay="350"
+                >
                   <span class="icon-circle bg-white text-primary me-3"
                     ><i class="bi bi-journal-text"></i
                   ></span>
@@ -989,6 +1262,14 @@
 
             <!-- Right Column -->
             <div class="col-md-6 right-side p-5 bg-white">
+              <h4
+                class="fw-bold text-dark mb-3"
+                data-aos="fade-up"
+                data-aos-duration="600"
+                data-aos-delay="100"
+              >
+                Pendaftaran Online
+              </h4>
               <img
                 src="/img/regis.png"
                 alt="thumbnail"
@@ -997,15 +1278,32 @@
                 data-aos="zoom-in"
                 data-aos-duration="600"
               />
-              <h4 class="fw-bold text-dark mb-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">Pendaftaran Online</h4>
-              <p class="text-muted mb-4" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
+              <h4
+                class="fw-bold text-dark mb-3"
+                data-aos="fade-up"
+                data-aos-duration="600"
+                data-aos-delay="100"
+              >
+                Pendaftaran Pendidikan MAPPI dilakukan melalui situs website
+              </h4>
+              <p
+                class="text-muted mb-4"
+                data-aos="fade-up"
+                data-aos-duration="600"
+                data-aos-delay="150"
+              >
                 Pendaftaran Pendidikan MAPPI dilakukan melalui Website MAPPI.
                 Anggota MAPPI yang dapat mengikuti pendidikan MAPPI adalah
                 Anggota MAPPI yang telah memenuhi ketentuan persyaratan
                 pendidikan dan telah melakukan pembayaran Iuran Tahunan Anggota
                 sampai dengan Tahun ini.
               </p>
-              <a class="btn btn-primary rounded-pill px-4 py-2" href="#" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200"
+              <a
+                class="btn btn-primary rounded-pill px-4 py-2"
+                href="#"
+                data-aos="fade-up"
+                data-aos-duration="600"
+                data-aos-delay="200"
                 >Daftar <i class="bi bi-arrow-right ms-2"></i
               ></a>
             </div>
@@ -1014,115 +1312,414 @@
       </div>
     </section>
 
+    <style>
+      /* Jadwal Pendidikan - Tab Styling */
+      .schedule-tabs {
+        border-bottom: 2px solid #e9ecef;
+      }
+
+      .schedule-tabs .nav-item .nav-link {
+        color: #6c757d;
+        border: none;
+        background: transparent;
+        padding: 0.5rem 1.5rem;
+        margin-bottom: -2px;
+        transition: all 0.3s ease;
+      }
+
+      .schedule-tabs .nav-item .nav-link.active {
+        color: #0041a2;
+        border-bottom: 3px solid #0041a2;
+        font-weight: 600;
+      }
+
+      .schedule-tabs .nav-item .nav-link:hover:not(.active) {
+        color: #0041a2;
+        background-color: rgba(0, 65, 162, 0.05);
+      }
+
+      /* Styling untuk list-group items */
+      .schedule-list .list-group-item {
+        border-left: none;
+        border-right: none;
+        border-color: #e9ecef;
+        transition: all 0.3s ease;
+      }
+
+      .schedule-list .list-group-item:first-child {
+        border-top: none;
+      }
+
+      .schedule-list .list-group-item:last-child {
+        border-bottom: 1px solid #e9ecef;
+      }
+
+      .schedule-list .list-group-item:hover {
+        background-color: rgba(0, 65, 162, 0.03);
+      }
+
+      /* Styling untuk tag */
+      .tag {
+        background-color: #e9ecef;
+        color: #495057;
+        padding: 0.25rem 0.75rem;
+        border-radius: 50px;
+        font-size: 0.875rem;
+        display: inline-block;
+      }
+
+      .tag.primary {
+        background-color: #0041a2;
+        color: white;
+      }
+
+      /* Link Selengkapnya */
+      .link-primary {
+        color: #0041a2 !important;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .link-primary:hover {
+        color: #002b7f !important;
+        transform: translateX(3px);
+      }
+    </style>
+
+    <!-- Jadwal Pendidikan -->
     <!-- Jadwal Pendidikan -->
     <section class="schedule-section py-5 mt-3">
       <div class="container py-3">
-        <h2 class="h2 text-primary-mappi text-center fw-bold text-mappi mb-3" data-aos="fade-up" data-aos-duration="600">
+        <h2
+          class="h2 text-primary-mappi text-center fw-bold text-mappi mb-3"
+          data-aos="fade-up"
+          data-aos-duration="600"
+        >
           Jadwal Pendidikan
         </h2>
-        <ul class="nav justify-content-center schedule-tabs mb-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Semua</a>
+
+        <!-- Tab Navigation -->
+        <ul
+          class="nav justify-content-center schedule-tabs mb-4"
+          id="scheduleTabs"
+          role="tablist"
+          data-aos="fade-up"
+          data-aos-duration="600"
+          data-aos-delay="100"
+        >
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="semua-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#semua"
+              type="button"
+              role="tab"
+              aria-controls="semua"
+              aria-selected="true"
+            >
+              Semua
+            </button>
           </li>
-          <li class="nav-item"><a class="nav-link" href="#">PDP</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">PLP</a></li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">PPL/Workshop/Seminar</a>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="pdp-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#pdp"
+              type="button"
+              role="tab"
+              aria-controls="pdp"
+              aria-selected="false"
+            >
+              PDP
+            </button>
           </li>
-          <li class="nav-item"><a class="nav-link" href="#">PDS/PLS</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">USP</a></li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="plp-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#plp"
+              type="button"
+              role="tab"
+              aria-controls="plp"
+              aria-selected="false"
+            >
+              PLP
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="ppl-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#ppl"
+              type="button"
+              role="tab"
+              aria-controls="ppl"
+              aria-selected="false"
+            >
+              PPL/Workshop/Seminar
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="pds-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#pds"
+              type="button"
+              role="tab"
+              aria-controls="pds"
+              aria-selected="false"
+            >
+              PDS/PLS
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="usp-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#usp"
+              type="button"
+              role="tab"
+              aria-controls="usp"
+              aria-selected="false"
+            >
+              USP
+            </button>
+          </li>
         </ul>
-        <div class="list-group schedule-list">
-          <div class="list-group-item py-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
-            <div class="row g-3 align-items-start">
-              <div class="col-12 col-md-9">
-                <div class="fw-semibold mb-2">
-                  Pendidikan Dasar Penilaian 1 (PDP 1) Properti [ID: 3541]
-                </div>
-                <div class="d-flex flex-wrap gap-2">
-                  <span class="tag primary">Kuota: 45</span>
-                  <span class="tag">Tanggal: 30 Sept – 1 Okt, 2025</span>
-                  <span class="tag"
-                    >Tempat: Hybrid (Virtual Learning & Ujian Offline)</span
-                  >
-                  <span class="tag">Klasifikasi: PDP 1 Properti</span>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="scheduleTabContent">
+          <!-- Tab Semua -->
+          <div
+            class="tab-pane fade show active"
+            id="semua"
+            role="tabpanel"
+            aria-labelledby="semua-tab"
+          >
+            <div class="list-group schedule-list">
+              <!-- Item 1 -->
+              <div
+                class="list-group-item py-3"
+                data-aos="fade-up"
+                data-aos-duration="600"
+              >
+                <div class="row g-3 align-items-start">
+                  <div class="col-12 col-md-9">
+                    <div class="fw-semibold mb-2">
+                      Pendidikan Dasar Penilaian 1 (PDP 1) Properti [ID: 3541]
+                    </div>
+                    <div class="d-flex flex-wrap gap-2">
+                      <span class="tag primary">Kuota: 45</span>
+                      <span class="tag">Tanggal: 30 Sept – 1 Okt, 2025</span>
+                      <span class="tag"
+                        >Tempat: Hybrid (Virtual Learning & Ujian Offline)</span
+                      >
+                      <span class="tag">Klasifikasi: PDP 1 Properti</span>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-3 d-flex justify-content-md-end">
+                    <a href="#" class="link-primary"
+                      >Selengkapnya <span class="ms-1">›</span></a
+                    >
+                  </div>
                 </div>
               </div>
-              <div class="col-12 col-md-3 d-flex justify-content-md-end">
-                <a href="#" class="link-primary"
-                  >Selengkapnya <span class="ms-1">›</span></a
-                >
+              <!-- Item 2 -->
+              <div
+                class="list-group-item py-3"
+                data-aos="fade-up"
+                data-aos-duration="600"
+                data-aos-delay="50"
+              >
+                <div class="row g-3 align-items-start">
+                  <div class="col-12 col-md-9">
+                    <div class="fw-semibold mb-2">
+                      Pendidikan Lanjut Penilaian 1 (PLP 1) Bisnis [ID: 3542]
+                    </div>
+                    <div class="d-flex flex-wrap gap-2">
+                      <span class="tag primary">Kuota: 30</span>
+                      <span class="tag">Tanggal: 5 – 7 Okt, 2025</span>
+                      <span class="tag">Tempat: Offline - Jakarta</span>
+                      <span class="tag">Klasifikasi: PLP 1 Bisnis</span>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-3 d-flex justify-content-md-end">
+                    <a href="#" class="link-primary"
+                      >Selengkapnya <span class="ms-1">›</span></a
+                    >
+                  </div>
+                </div>
               </div>
+              <!-- Tambahkan item lainnya sesuai kebutuhan -->
             </div>
           </div>
-          <div class="list-group-item py-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
-            <div class="row g-3 align-items-start">
-              <div class="col-12 col-md-9">
-                <div class="fw-semibold mb-2">
-                  Pendidikan Dasar Penilaian 1 (PDP 1) Properti [ID: 3541]
-                </div>
-                <div class="d-flex flex-wrap gap-2">
-                  <span class="tag primary">Kuota: 45</span>
-                  <span class="tag">Tanggal: 30 Sept – 1 Okt, 2025</span>
-                  <span class="tag"
-                    >Tempat: Hybrid (Virtual Learning & Ujian Offline)</span
-                  >
-                  <span class="tag">Klasifikasi: PDP 1 Properti</span>
-                  <span class="tag">Peserta: Umum/A/P/F/S</span>
-                  <span class="tag">Desig: Workshop/Seminar</span>
+
+          <!-- Tab PDP -->
+          <div
+            class="tab-pane fade"
+            id="pdp"
+            role="tabpanel"
+            aria-labelledby="pdp-tab"
+          >
+            <div class="list-group schedule-list">
+              <div class="list-group-item py-3">
+                <div class="row g-3 align-items-start">
+                  <div class="col-12 col-md-9">
+                    <div class="fw-semibold mb-2">
+                      PDP 1 - Properti Dasar [ID: 3541]
+                    </div>
+                    <div class="d-flex flex-wrap gap-2">
+                      <span class="tag primary">Kuota: 45</span>
+                      <span class="tag">Tanggal: 30 Sept – 1 Okt, 2025</span>
+                      <span class="tag">Tempat: Hybrid</span>
+                      <span class="tag">Kategori: PDP</span>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-3 d-flex justify-content-md-end">
+                    <a href="#" class="link-primary"
+                      >Selengkapnya <span class="ms-1">›</span></a
+                    >
+                  </div>
                 </div>
               </div>
-              <div class="col-12 col-md-3 d-flex justify-content-md-end">
-                <a href="#" class="link-primary"
-                  >Selengkapnya <span class="ms-1">›</span></a
-                >
-              </div>
+              <!-- Tambahkan item PDP lainnya -->
             </div>
           </div>
-          <div class="list-group-item py-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="250">
-            <div class="row g-3 align-items-start">
-              <div class="col-12 col-md-9">
-                <div class="fw-semibold mb-2">
-                  Pendidikan Dasar Penilaian 1 (PDP 1) Properti [ID: 3541]
-                </div>
-                <div class="d-flex flex-wrap gap-2">
-                  <span class="tag primary">Kuota: 45</span>
-                  <span class="tag">Tanggal: 30 Sept – 1 Okt, 2025</span>
-                  <span class="tag"
-                    >Tempat: Hybrid (Virtual Learning & Ujian Offline)</span
-                  >
-                  <span class="tag">Klasifikasi: PDP 1 Properti</span>
+
+          <!-- Tab PLP -->
+          <div
+            class="tab-pane fade"
+            id="plp"
+            role="tabpanel"
+            aria-labelledby="plp-tab"
+          >
+            <div class="list-group schedule-list">
+              <div class="list-group-item py-3">
+                <div class="row g-3 align-items-start">
+                  <div class="col-12 col-md-9">
+                    <div class="fw-semibold mb-2">
+                      PLP 1 - Bisnis Lanjutan [ID: 3542]
+                    </div>
+                    <div class="d-flex flex-wrap gap-2">
+                      <span class="tag primary">Kuota: 30</span>
+                      <span class="tag">Tanggal: 5 – 7 Okt, 2025</span>
+                      <span class="tag">Tempat: Offline - Jakarta</span>
+                      <span class="tag">Kategori: PLP</span>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-3 d-flex justify-content-md-end">
+                    <a href="#" class="link-primary"
+                      >Selengkapnya <span class="ms-1">›</span></a
+                    >
+                  </div>
                 </div>
               </div>
-              <div class="col-12 col-md-3 d-flex justify-content-md-end">
-                <a href="#" class="link-primary"
-                  >Selengkapnya <span class="ms-1">›</span></a
-                >
-              </div>
+              <!-- Tambahkan item PLP lainnya -->
             </div>
           </div>
-          <div class="list-group-item py-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
-            <div class="row g-3 align-items-start">
-              <div class="col-12 col-md-9">
-                <div class="fw-semibold mb-2">
-                  Pendidikan Dasar Penilaian 1 (PDP 1) Properti [ID: 3541]
-                </div>
-                <div class="d-flex flex-wrap gap-2">
-                  <span class="tag primary">Kuota: 45</span>
-                  <span class="tag">Tanggal: 30 Sept – 1 Okt, 2025</span>
-                  <span class="tag"
-                    >Tempat: Hybrid (Virtual Learning & Ujian Offline)</span
-                  >
-                  <span class="tag">Klasifikasi: PDP 1 Properti</span>
-                  <span class="tag">Peserta: Umum/A/P/F/S</span>
-                  <span class="tag">Desig: Workshop/Seminar</span>
+
+          <!-- Tab PPL/Workshop/Seminar -->
+          <div
+            class="tab-pane fade"
+            id="ppl"
+            role="tabpanel"
+            aria-labelledby="ppl-tab"
+          >
+            <div class="list-group schedule-list">
+              <div class="list-group-item py-3">
+                <div class="row g-3 align-items-start">
+                  <div class="col-12 col-md-9">
+                    <div class="fw-semibold mb-2">
+                      Workshop Memahami Laporan Keuangan [ID: 3543]
+                    </div>
+                    <div class="d-flex flex-wrap gap-2">
+                      <span class="tag primary">Kuota: 50</span>
+                      <span class="tag">Tanggal: 10 Okt, 2025</span>
+                      <span class="tag">Tempat: Online</span>
+                      <span class="tag">Kategori: Workshop</span>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-3 d-flex justify-content-md-end">
+                    <a href="#" class="link-primary"
+                      >Selengkapnya <span class="ms-1">›</span></a
+                    >
+                  </div>
                 </div>
               </div>
-              <div class="col-12 col-md-3 d-flex justify-content-md-end">
-                <a href="#" class="link-primary"
-                  >Selengkapnya <span class="ms-1">›</span></a
-                >
+              <!-- Tambahkan item PPL/Workshop lainnya -->
+            </div>
+          </div>
+
+          <!-- Tab PDS/PLS -->
+          <div
+            class="tab-pane fade"
+            id="pds"
+            role="tabpanel"
+            aria-labelledby="pds-tab"
+          >
+            <div class="list-group schedule-list">
+              <div class="list-group-item py-3">
+                <div class="row g-3 align-items-start">
+                  <div class="col-12 col-md-9">
+                    <div class="fw-semibold mb-2">
+                      PDS - Dasar Standar Penilaian [ID: 3544]
+                    </div>
+                    <div class="d-flex flex-wrap gap-2">
+                      <span class="tag primary">Kuota: 40</span>
+                      <span class="tag">Tanggal: 15 – 16 Okt, 2025</span>
+                      <span class="tag">Tempat: Hybrid</span>
+                      <span class="tag">Kategori: PDS</span>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-3 d-flex justify-content-md-end">
+                    <a href="#" class="link-primary"
+                      >Selengkapnya <span class="ms-1">›</span></a
+                    >
+                  </div>
+                </div>
               </div>
+              <!-- Tambahkan item PDS/PLS lainnya -->
+            </div>
+          </div>
+
+          <!-- Tab USP -->
+          <div
+            class="tab-pane fade"
+            id="usp"
+            role="tabpanel"
+            aria-labelledby="usp-tab"
+          >
+            <div class="list-group schedule-list">
+              <div class="list-group-item py-3">
+                <div class="row g-3 align-items-start">
+                  <div class="col-12 col-md-9">
+                    <div class="fw-semibold mb-2">
+                      Ujian Sertifikasi Penilai 2025 [ID: 3545]
+                    </div>
+                    <div class="d-flex flex-wrap gap-2">
+                      <span class="tag primary">Kuota: 100</span>
+                      <span class="tag">Tanggal: 25 Okt, 2025</span>
+                      <span class="tag">Tempat: Offline - Jakarta</span>
+                      <span class="tag">Kategori: Ujian Sertifikasi</span>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-3 d-flex justify-content-md-end">
+                    <a href="#" class="link-primary"
+                      >Selengkapnya <span class="ms-1">›</span></a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Tambahkan item USP lainnya -->
             </div>
           </div>
         </div>
@@ -1132,13 +1729,22 @@
     <!-- Info Lainnya -->
     <section id="info-lainnya" class="py-5">
       <div class="container">
-        <h2 class="text-center text-primary-mappi fw-bold mb-4" data-aos="fade-up" data-aos-duration="600">
+        <h2
+          class="text-center text-primary-mappi fw-bold mb-4"
+          data-aos="fade-up"
+          data-aos-duration="600"
+        >
           Info lainnya
         </h2>
 
         <div class="py-4 rounded-4">
           <div class="row g-4">
-            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+            <div
+              class="col-6 col-md-3"
+              data-aos="fade-up"
+              data-aos-duration="600"
+              data-aos-delay="100"
+            >
               <div class="info-card rounded-3 overflow-hidden">
                 <div class="card-thumb">
                   <img src="/img/info1.png" class="w-100" alt="Info 2" />
@@ -1150,7 +1756,12 @@
               </div>
             </div>
 
-            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
+            <div
+              class="col-6 col-md-3"
+              data-aos="fade-up"
+              data-aos-duration="600"
+              data-aos-delay="150"
+            >
               <div class="info-card rounded-3 overflow-hidden">
                 <div class="card-thumb">
                   <img src="/img/info2.png" class="w-100" alt="Info 2" />
@@ -1161,7 +1772,12 @@
               </div>
             </div>
 
-            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+            <div
+              class="col-6 col-md-3"
+              data-aos="fade-up"
+              data-aos-duration="600"
+              data-aos-delay="200"
+            >
               <div class="info-card rounded-3 overflow-hidden">
                 <div class="card-thumb">
                   <img src="/img/info3.png" class="w-100" alt="Info 3" />
@@ -1172,7 +1788,12 @@
               </div>
             </div>
 
-            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="250">
+            <div
+              class="col-6 col-md-3"
+              data-aos="fade-up"
+              data-aos-duration="600"
+              data-aos-delay="250"
+            >
               <div class="info-card rounded-3 overflow-hidden">
                 <div class="card-thumb">
                   <img src="/img/info4.png" class="w-100" alt="Info 4" />
@@ -1188,37 +1809,73 @@
       </div>
     </section>
 
+    <style>
+      #link-terkait .logo-item {
+        padding: 20px 0;
+        transition: all 0.2s ease;
+      }
+
+      #link-terkait .logo-item:hover {
+        background: rgba(0, 0, 0, 0.02);
+        border-radius: 6px;
+      }
+    </style>
+
     <!-- Link Terkait -->
-    <section id="link-terkait" class="py-3">
+    <section id="link-terkait" class="py-5 bg-primary-mappi">
       <div class="container">
-        <h2 class="text-center text-primary-mappi fw-bold mb-4" data-aos="fade-up" data-aos-duration="600">
+        <h2
+          class="text-center text-primary-mappi fw-bold mb-4"
+          data-aos="fade-up"
+          data-aos-duration="600"
+        >
           Link Terkait
         </h2>
         <div
           class="d-flex flex-wrap justify-content-between align-items-center link-logos gap-2"
         >
-          <div class="logo-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="100">
+          <div
+            class="logo-item"
+            data-aos="zoom-in"
+            data-aos-duration="600"
+            data-aos-delay="100"
+          >
             <img
               src="/img/link55-removebg-preview.png"
               alt="DBS"
               loading="lazy"
             />
           </div>
-          <div class="logo-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="150">
+          <div
+            class="logo-item"
+            data-aos="zoom-in"
+            data-aos-duration="600"
+            data-aos-delay="150"
+          >
             <img
               src="/img/link66-removebg-preview.png"
               alt="MAPPI"
               loading="lazy"
             />
           </div>
-          <div class="logo-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
+          <div
+            class="logo-item"
+            data-aos="zoom-in"
+            data-aos-duration="600"
+            data-aos-delay="200"
+          >
             <img
               src="/img/link77-removebg-preview.png"
               alt="MAPPI"
               loading="lazy"
             />
           </div>
-          <div class="logo-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="250">
+          <div
+            class="logo-item"
+            data-aos="zoom-in"
+            data-aos-duration="600"
+            data-aos-delay="250"
+          >
             <img
               src="/img/link88-removebg-preview.png"
               alt="MAPPI"
@@ -1226,24 +1883,44 @@
             />
           </div>
 
-          <div class="logo-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="300">
+          <div
+            class="logo-item"
+            data-aos="zoom-in"
+            data-aos-duration="600"
+            data-aos-delay="300"
+          >
             <img src="/img/link1.png" alt="CBV" loading="lazy" />
           </div>
-          <div class="logo-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="350">
+          <div
+            class="logo-item"
+            data-aos="zoom-in"
+            data-aos-duration="600"
+            data-aos-delay="350"
+          >
             <img
               src="/img/link22-removebg-preview.png"
               alt="CA"
               loading="lazy"
             />
           </div>
-          <div class="logo-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="400">
+          <div
+            class="logo-item"
+            data-aos="zoom-in"
+            data-aos-duration="600"
+            data-aos-delay="400"
+          >
             <img
               src="/img/link33-removebg-preview.png"
               alt="CFA"
               loading="lazy"
             />
           </div>
-          <div class="logo-item" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="450">
+          <div
+            class="logo-item"
+            data-aos="zoom-in"
+            data-aos-duration="600"
+            data-aos-delay="450"
+          >
             <img
               src="/img/link44-removebg-preview.png"
               alt="Bloomberg"
@@ -1257,7 +1934,11 @@
     <footer class="footer-extended bg-primary-mappi text-white pt-5 pb-4">
       <div class="container">
         <div class="row gy-4">
-          <div class="col-12 col-lg-3" data-aos="fade-up" data-aos-duration="600">
+          <div
+            class="col-12 col-lg-3"
+            data-aos="fade-up"
+            data-aos-duration="600"
+          >
             <div class="d-flex align-items-center gap-2 mb-3">
               <img style="width: 50px" src="img/images (1).png" alt="logo" />
               <!-- <i class="bi-shield-check fs-3"></i> -->
@@ -1308,7 +1989,12 @@
             </div>
           </div>
 
-          <div class="col-12 col-lg-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+          <div
+            class="col-12 col-lg-3"
+            data-aos="fade-up"
+            data-aos-duration="600"
+            data-aos-delay="100"
+          >
             <div class="d-flex align-items-center gap-2 mb-3">
               <i class="bi-grid-3x3-gap-fill fs-5"></i>
               <span class="fw-semibold">Menu</span>
@@ -1334,7 +2020,12 @@
             </div>
           </div>
 
-          <div class="col-12 col-lg-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
+          <div
+            class="col-12 col-lg-3"
+            data-aos="fade-up"
+            data-aos-duration="600"
+            data-aos-delay="150"
+          >
             <div class="d-flex align-items-center gap-2 mb-3">
               <i class="bi-journal-bookmark fs-5"></i>
               <span class="fw-semibold">Pendidikan & Sertifikasi</span>
@@ -1362,7 +2053,12 @@
             </ul>
           </div>
 
-          <div class="col-12 col-lg-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+          <div
+            class="col-12 col-lg-3"
+            data-aos="fade-up"
+            data-aos-duration="600"
+            data-aos-delay="200"
+          >
             <div class="d-flex align-items-center gap-2 mb-3">
               <i class="bi-layout-text-sidebar-reverse fs-5"></i>
               <span class="fw-semibold">Lainnya</span>
@@ -1397,16 +2093,66 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      // Inisialisasi AOS dengan konfigurasi yang lebih smooth
+      // Inisialisasi AOS dengan konfigurasi yang lebih smoothdssj79o gg
       AOS.init({
         duration: 600,
-        easing: 'ease-out-cubic',
+        easing: "ease-out-cubic",
         once: true,
         offset: 50,
-        delay: 0
+        delay: 0,
+      });
+
+      document.querySelectorAll(".card").forEach((card) => {
+        const img = card.querySelector(".hover-img");
+        if (!img) return;
+
+        const original = img.src;
+        const hover = img.getAttribute("data-hover");
+
+        card.addEventListener("mouseenter", () => {
+          img.src = hover;
+        });
+
+        card.addEventListener("mouseleave", () => {
+          img.src = original;
+        });
       });
     </script>
     <script src="/script.js"></script>
+    <script>
+      // Inisialisasi tab Bootstrap
+      const scheduleTabs = document.querySelectorAll(
+        '#scheduleTabs button[data-bs-toggle="tab"]'
+      );
+      scheduleTabs.forEach((tab) => {
+        tab.addEventListener("shown.bs.tab", function (event) {
+          // Refresh AOS untuk konten tab yang baru terbuka
+          AOS.refresh();
+
+          // Tambahkan animasi untuk item di tab baru
+          const activeTabContent = document.querySelector(
+            event.target.getAttribute("data-bs-target")
+          );
+          const items = activeTabContent.querySelectorAll(".list-group-item");
+          items.forEach((item, index) => {
+            item.setAttribute("data-aos", "");
+            item.setAttribute("data-aos-duration", "600");
+            item.setAttribute("data-aos-delay", `${index * 50}`);
+          });
+          AOS.refresh();
+        });
+      });
+
+      // Atau jika menggunakan jQuery (jika Bootstrap dengan jQuery):
+      /*
+$(document).ready(function() {
+    $('button[data-bs-toggle="tab"]').on('shown.bs.tab', function(e) {
+        AOS.refresh();
+    });
+});
+*/
+    </script>
+
     <!-- Back to Top Button -->
     <button id="back-to-top" class="btn" aria-label="Back to top">
       <i class="bi bi-arrow-up fs-5" aria-hidden="true"></i>
