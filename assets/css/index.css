@@ -75,11 +75,58 @@
 .partner img {
   max-height: 100%; /* ukuran logo */
   object-fit: contain;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .partner img:hover {
-  transform: scale(1.1); /* efek hover */
+  transform: translateY(-10px); /* efek hover naik */
+}
+
+.media-slide img {
+  max-height: 80px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.media-slide img:hover {
+  transform: translateY(-10px);
+}
+
+.media-card {
+  background-color: rgba(0, 123, 255, 0.2); /* biru transparan */
+  border-radius: 1rem;
+  padding: 1rem;
+  min-height: 18rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.media-track-wrapper {
+  flex-grow: 1;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.media-track {
+  display: flex;
+  gap: 2rem;
+}
+
+.media-prev,
+.media-next {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
@@ -514,6 +561,11 @@ a.whatsapp span {
   object-fit: contain;
   display: block;
   filter: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+#link-terkait .logo-item img:hover {
+  transform: translateY(-10px);
 }
 
 @media (max-width: 768px) {
